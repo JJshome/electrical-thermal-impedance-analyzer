@@ -1,16 +1,26 @@
 # Integrated Electrical-Thermal Impedance Analysis System
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Python](https://img.shields.io/badge/Python-3.8%2B-green.svg)](https://www.python.org/downloads/)
+[![Python](https://img.shields.io/badge/Python-3.9%2B-green.svg)](https://www.python.org/downloads/)
 [![Status](https://img.shields.io/badge/Status-Active-success.svg)](https://github.com/JJshome/electrical-thermal-impedance-analyzer)
 
 ## Overview
 
 This repository contains an implementation of an advanced integrated electrical-thermal impedance analysis system. The system combines electrical impedance spectroscopy (EIS) and thermal impedance spectroscopy (TIS) techniques to provide comprehensive characterization of various systems including energy storage devices, semiconductor components, and biological tissues.
 
-![System Overview](docs/images/system_overview.png)
+<div align="center">
+  <img src="docs/images/integrated_impedance_system.svg" alt="Integrated Electrical-Thermal Impedance System" width="700">
+</div>
 
-*Note: This technology is based on patented technology developed by Ucaretron Inc. Original patent information can be found in the documentation.*
+## Patent Information
+
+This technology is based on the groundbreaking patent "Integrated Electrical-Thermal Impedance Analysis System and Method" filed by Ucaretron Inc. The patent details:
+
+- **Patent Title**: 열 임피던스와 전기 임피던스 통합 분석 시스템 및 방법 (Integrated Electrical-Thermal Impedance Analysis System and Method)
+- **Inventor**: Jihwan Jang (장지환)
+- **Filing Entity**: Ucaretron Inc. (㈜유케어트론)
+- **Key Innovation**: Simultaneous measurement and integrated analysis of both electrical and thermal impedance characteristics, providing multi-dimensional insight into material properties and system behavior beyond what either technique could achieve alone.
+- **Application Areas**: Energy storage systems, semiconductor components, biomedical diagnostics, and materials science.
 
 ## Key Features
 
@@ -21,6 +31,18 @@ This repository contains an implementation of an advanced integrated electrical-
 - **Multi-frequency Analysis**: Efficient data acquisition across multiple frequencies
 - **Real-time Processing**: FPGA-based signal processing for real-time analysis
 - **Adaptive Measurement**: Dynamic adjustment of measurement parameters based on system response
+
+## How It Works
+
+<div align="center">
+  <img src="docs/images/impedance_integration_diagram.svg" alt="Electrical-Thermal Impedance Integration" width="800">
+</div>
+
+The system operates by:
+1. **Dual Stimulation**: Applying precisely controlled electrical signals and thermal pulses to the target system
+2. **Synchronized Measurement**: Capturing electrical and thermal responses simultaneously
+3. **Integrated Analysis**: Correlating both impedance types to extract comprehensive system characteristics
+4. **AI-Enhanced Processing**: Using deep learning to identify patterns and predict system behavior
 
 ## Applications
 
@@ -53,7 +75,9 @@ This technology has applications in multiple domains:
 
 The system consists of several integrated components:
 
-![System Architecture](docs/images/system_architecture.png)
+<div align="center">
+  <img src="docs/images/system_architecture.svg" alt="System Architecture" width="750">
+</div>
 
 - **Electrical Impedance Module (EIS)**: Measures electrical impedance spectra
 - **Thermal Impedance Module (TIS)**: Measures thermal impedance spectra
@@ -61,6 +85,12 @@ The system consists of several integrated components:
 - **AI-based Analysis Engine**: Extracts system characteristics from impedance data
 - **Thermal Management System**: Maintains precise temperature control
 - **Power Management Module**: Ensures efficient power delivery
+
+## Scientific Background
+
+Our approach builds upon the pioneering work of Barsoukov et al. in ["Thermal impedance spectroscopy for Li-ion batteries using heat-pulse response analysis"](https://www.sciencedirect.com/science/article/abs/pii/S0378775302000800) (Journal of Power Sources, 2002), which first demonstrated the value of thermal impedance for battery analysis. We extend this concept by integrating electrical and thermal measurements into a unified analytical framework.
+
+The thermal impedance function Z(s) can be approximated as a thermal impedance spectrum by analyzing the experimental temperature transient through Laplace transformation. This allows us to simultaneously obtain both the thermal capacity and thermal conductivity of the system through non-linear complex least-squares fitting of the spectrum.
 
 ## Repository Structure
 
@@ -82,7 +112,7 @@ The system consists of several integrated components:
 
 ### Prerequisites
 
-- Python 3.8+
+- Python 3.9+
 - NumPy, SciPy, Pandas
 - PyTorch or TensorFlow (for AI components)
 - FPGA development tools (for hardware implementation)
@@ -124,13 +154,19 @@ analyzer.plot_impedance_spectra(results)
 ## Example Results
 
 ### Battery Analysis
-![Battery Analysis](docs/images/battery_analysis.gif)
+<div align="center">
+  <img src="docs/images/battery_analysis.gif" alt="Battery Analysis" width="600">
+</div>
 
 ### Tissue Characterization
-![Tissue Characterization](docs/images/tissue_characterization.png)
+<div align="center">
+  <img src="docs/images/tissue_characterization.png" alt="Tissue Characterization" width="600">
+</div>
 
 ### Semiconductor Thermal Mapping
-![Thermal Mapping](docs/images/thermal_mapping.gif)
+<div align="center">
+  <img src="docs/images/thermal_mapping.gif" alt="Thermal Mapping" width="600">
+</div>
 
 ## Contributing
 
