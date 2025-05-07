@@ -6,10 +6,9 @@ for precise temperature control during impedance measurements. The thermal manag
 system ensures stable temperature conditions for accurate impedance analysis.
 
 Based on the methodology described in the patent:
-열 임피던스와 전기 임피던스 통합 분석 시스템 및 방법
-(Integrated Electrical-Thermal Impedance Analysis System and Method)
+Integrated Electrical-Thermal Impedance Analysis System and Method
 
-Author: Jihwan Jang
+Author: Jee Hwan Jang
 Organization: Ucaretron Inc.
 """
 
