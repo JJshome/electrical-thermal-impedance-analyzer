@@ -5,7 +5,7 @@ This module provides hardware abstraction for controlling Peltier elements and t
 sensors in a PCM-based thermal management system. It interfaces with the thermal_management
 module to provide the actual hardware control.
 
-Author: Jihwan Jang
+Author: Jee Hwan Jang
 Organization: Ucaretron Inc.
 """
 
@@ -1074,5 +1074,4 @@ class MultiZoneThermalController:
         ax2.legend()
         
         plt.tight_layout()
-        return fig, (ax1, ax2)
-"""
+        return fig, (ax1, ax2)"""
