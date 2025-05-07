@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500">
+  <!-- Background -->
+  <rect width="900" height="500" fill="#f0f2f5" rx="10" ry="10" />
+  
+  <!-- Title -->
+  <text x="450" y="40" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#333">Integrated Electrical-Thermal Impedance System</text>
+  <text x="450" y="65" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#666">Patented by Ucaretron Inc. - Inventor: Jihwan Jang</text>
+  
+  <!-- Device Visualization -->
+  <rect x="150" y="100" width="600" height="300" rx="10" ry="10" fill="#fff" stroke="#ccc" stroke-width="2" />
+  
+  <!-- Device Body with Gradient -->
+  <defs>
+    <linearGradient id="deviceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0e9ff" />
+      <stop offset="100%" stop-color="#ffe0e0" />
+    </linearGradient>
+  </defs>
+  <rect x="200" y="130" width="500" height="240" rx="8" ry="8" fill="url(#deviceGradient)" stroke="#888" stroke-width="1.5" />
+  
+  <!-- Device Components -->
+  <!-- Left Side: Electrical Module -->
+  <rect x="220" y="150" width="180" height="200" rx="5" ry="5" fill="#d1e7ff" stroke="#0066cc" stroke-width="1.5" />
+  <text x="310" y="175" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#0066cc">Electrical Impedance</text>
+  <text x="310" y="195" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#0066cc">Module</text>
+  
+  <!-- Electrical Circuit Animation -->
+  <line x1="240" y1="230" x2="260" y2="230" stroke="#333" stroke-width="1.5" />
+  <rect x="260" y="222" width="15" height="15" fill="none" stroke="#333" stroke-width="1.5" />
+  <line x1="275" y1="230" x2="290" y2="230" stroke="#333" stroke-width="1.5" />
+  
+  <path d="M 290,230 C 300,230 300,215 310,215 S 320,245 330,245 S 340,215 350,215" fill="none" stroke="#333" stroke-width="1.5" />
+  <line x1="350" y1="215" x2="365" y2="215" stroke="#333" stroke-width="1.5" />
+  <line x1="365" y1="215" x2="365" y2="245" stroke="#333" stroke-width="1.5" />
+  <line x1="350" y1="245" x2="380" y2="245" stroke="#333" stroke-width="1.5" />
+  
+  <circle cx="310" cy="255" r="3" fill="#0066cc">
+    <animate attributeName="cy" values="255;240;255" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" />
+  </circle>
+  
+  <text x="310" y="280" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">0.1Hz - 500kHz</text>
+  
+  <!-- Nyquist Graph -->
+  <rect x="255" y="300" width="110" height="40" rx="3" ry="3" fill="#f8f9fa" stroke="#aaa" stroke-width="1" />
+  <path d="M 265,330 Q 285,315 315,320 T 355,325" fill="none" stroke="#0066cc" stroke-width="1.5" />
+  
+  <!-- Right Side: Thermal Module -->
+  <rect x="500" y="150" width="180" height="200" rx="5" ry="5" fill="#ffe8d1" stroke="#cc6600" stroke-width="1.5" />
+  <text x="590" y="175" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#cc6600">Thermal Impedance</text>
+  <text x="590" y="195" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#cc6600">Module</text>
+  
+  <!-- Thermal Pulse Animation -->
+  <rect x="540" y="225" width="100" height="20" rx="2" ry="2" fill="#ffb380" stroke="#cc6600" stroke-width="1" />
+  <text x="590" y="239" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">Heat Pulse</text>
+  
+  <!-- Heat Wave Animation -->
+  <path d="M 540,260 Q 550,250 560,260 T 580,260 T 600,260 T 620,260 T 640,260" fill="none" stroke="#cc6600" stroke-width="2">
+    <animate attributeName="d" 
+             values="M 540,260 Q 550,250 560,260 T 580,260 T 600,260 T 620,260 T 640,260;
+                     M 540,260 Q 550,270 560,260 T 580,260 T 600,260 T 620,260 T 640,260;
+                     M 540,260 Q 550,250 560,260 T 580,260 T 600,260 T 620,260 T 640,260" 
+             dur="3s" 
+             repeatCount="indefinite" />
+  </path>
+  
+  <text x="590" y="280" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">0.01Hz - 1Hz</text>
+  
+  <!-- Thermal Response Graph -->
+  <rect x="535" y="300" width="110" height="40" rx="3" ry="3" fill="#f8f9fa" stroke="#aaa" stroke-width="1" />
+  <path d="M 545,330 Q 565,315 595,320 T 635,325" fill="none" stroke="#cc6600" stroke-width="1.5" />
+  
+  <!-- Center Integration Module -->
+  <circle cx="450" cy="250" r="40" fill="#e0f7e0" stroke="#2e7d32" stroke-width="1.5" />
+  <text x="450" y="245" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2e7d32">Integration</text>
+  <text x="450" y="265" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2e7d32">Module</text>
+  
+  <!-- Connection Lines -->
+  <path d="M 400,220 L 410,220 Q 420,220 425,230 L 430,250" fill="none" stroke="#0066cc" stroke-width="1.5" stroke-dasharray="3,2" />
+  <path d="M 400,280 L 410,280 Q 420,280 425,270 L 430,250" fill="none" stroke="#0066cc" stroke-width="1.5" stroke-dasharray="3,2" />
+  
+  <path d="M 500,220 L 490,220 Q 480,220 475,230 L 470,250" fill="none" stroke="#cc6600" stroke-width="1.5" stroke-dasharray="3,2" />
+  <path d="M 500,280 L 490,280 Q 480,280 475,270 L 470,250" fill="none" stroke="#cc6600" stroke-width="1.5" stroke-dasharray="3,2" />
+  
+  <!-- Integration Animation -->
+  <circle cx="450" cy="250" r="30" fill="none" stroke="#2e7d32" stroke-width="1" opacity="0.5">
+    <animate attributeName="r" values="30;35;30" dur="4s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.2;0.7;0.2" dur="4s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Results Output -->
+  <path d="M 450,290 L 450,350" fill="none" stroke="#2e7d32" stroke-width="1.5" stroke-dasharray="4,2" />
+  <rect x="350" y="350" width="200" height="35" rx="5" ry="5" fill="#fff" stroke="#2e7d32" stroke-width="1.5" />
+  <text x="450" y="374" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2e7d32">Comprehensive Analysis</text>
+  
+  <!-- Bottom Information -->
+  <text x="450" y="420" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">Key Applications:</text>
+  <text x="450" y="445" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">Energy Storage • Biomedical • Semiconductor • Materials Science</text>
+  <text x="450" y="465" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">Patent Reference: 열 임피던스와 전기 임피던스 통합 분석 시스템 및 방법</text>
+</svg>
