@@ -1,102 +1,350 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
-  <!-- Background and Title -->
-  <rect width="800" height="600" fill="#f8f9fa" rx="10" ry="10" />
-  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">Integrated Electrical-Thermal Impedance Analysis System</text>
-  
-  <!-- Main System Boundary -->
-  <rect x="50" y="80" width="700" height="470" fill="#f0f0f0" stroke="#666" stroke-width="2" rx="10" ry="10" stroke-dasharray="5,5" />
-  
-  <!-- Modules -->
-  <!-- Electrical Impedance Module (EIS) -->
-  <rect x="100" y="130" width="180" height="120" fill="#d1e7ff" stroke="#0066cc" stroke-width="2" rx="5" ry="5" />
-  <text x="190" y="160" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#0066cc">Electrical Impedance</text>
-  <text x="190" y="180" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#0066cc">Module (EIS)</text>
-  <text x="190" y="210" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">0.1Hz - 500kHz</text>
-  <text x="190" y="230" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">Frequency Range</text>
-  
-  <!-- Thermal Impedance Module (TIS) -->
-  <rect x="520" y="130" width="180" height="120" fill="#ffe8d1" stroke="#cc6600" stroke-width="2" rx="5" ry="5" />
-  <text x="610" y="160" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#cc6600">Thermal Impedance</text>
-  <text x="610" y="180" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#cc6600">Module (TIS)</text>
-  <text x="610" y="210" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">0.01Hz - 1Hz</text>
-  <text x="610" y="230" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">Thermal Response</text>
-  
-  <!-- Integrated Signal Processor -->
-  <rect x="310" y="240" width="180" height="120" fill="#e0f7fa" stroke="#00838f" stroke-width="2" rx="5" ry="5" />
-  <text x="400" y="270" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#00838f">Integrated Signal</text>
-  <text x="400" y="290" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#00838f">Processor</text>
-  <text x="400" y="320" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">FPGA-based</text>
-  <text x="400" y="340" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">Real-time Processing</text>
-  
-  <!-- AI-based Analysis Engine -->
-  <circle cx="400" cy="430" r="70" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2" />
-  <text x="400" y="420" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2e7d32">AI-based</text>
-  <text x="400" y="440" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2e7d32">Analysis Engine</text>
-  
-  <!-- Thermal Management System -->
-  <rect x="520" y="360" width="180" height="90" fill="#ffebee" stroke="#c62828" stroke-width="2" rx="5" ry="5" />
-  <text x="610" y="390" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#c62828">Thermal Management</text>
-  <text x="610" y="410" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">PCM-based Control</text>
-  
-  <!-- Power Management Module -->
-  <rect x="100" y="360" width="180" height="90" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2" rx="5" ry="5" />
-  <text x="190" y="390" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#6a1b9a">Power Management</text>
-  <text x="190" y="410" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">Efficient Delivery</text>
-  
-  <!-- Connection Lines -->
-  <!-- EIS to Signal Processor -->
-  <path d="M 280 190 L 310 250" stroke="#0066cc" stroke-width="2" fill="none" />
-  <!-- TIS to Signal Processor -->
-  <path d="M 520 190 L 490 250" stroke="#cc6600" stroke-width="2" fill="none" />
-  <!-- Signal Processor to AI Engine -->
-  <path d="M 400 360 L 400 360" stroke="#00838f" stroke-width="2" fill="none" />
-  <!-- Power to EIS -->
-  <path d="M 190 360 L 190 250" stroke="#6a1b9a" stroke-width="2" fill="none" />
-  <!-- Power to TIS -->
-  <path d="M 190 380 C 250 380 550 380 610 250" stroke="#6a1b9a" stroke-width="2" fill="none" stroke-dasharray="5,3" />
-  <!-- Thermal Management to TIS -->
-  <path d="M 610 360 L 610 250" stroke="#c62828" stroke-width="2" fill="none" />
-  
-  <!-- Data Flow Arrows -->
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+    <!-- Gradients for modules -->
+    <linearGradient id="eis-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4fc3f7" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#2196f3" stop-opacity="0.9" />
+    </linearGradient>
+    
+    <linearGradient id="tis-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff8a65" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#ff5722" stop-opacity="0.9" />
+    </linearGradient>
+    
+    <linearGradient id="isp-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9575cd" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#673ab7" stop-opacity="0.9" />
+    </linearGradient>
+    
+    <linearGradient id="ai-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7986cb" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#3f51b5" stop-opacity="0.9" />
+    </linearGradient>
+    
+    <linearGradient id="thm-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#64b5f6" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#1976d2" stop-opacity="0.9" />
+    </linearGradient>
+    
+    <linearGradient id="pm-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#81c784" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#4caf50" stop-opacity="0.9" />
+    </linearGradient>
+    
+    <!-- Filters -->
+    <filter id="module-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur" />
+      <feOffset in="blur" dx="4" dy="4" result="offsetBlur" />
+      <feComposite in="SourceGraphic" in2="offsetBlur" operator="over" />
+    </filter>
+    
+    <!-- Data flow animation -->
+    <circle id="data-dot" r="3" fill="#ffffff">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Animated sine wave for electrical signals -->
+    <path id="sine-wave" d="M0,0 Q5,-10 10,0 T20,0 T30,0 T40,0" stroke="white" stroke-width="1.5" fill="none">
+      <animate attributeName="d" 
+               values="M0,0 Q5,-10 10,0 T20,0 T30,0 T40,0;
+                      M0,0 Q5,10 10,0 T20,0 T30,0 T40,0;
+                      M0,0 Q5,-10 10,0 T20,0 T30,0 T40,0" 
+               dur="1.5s" 
+               repeatCount="indefinite" />
+    </path>
+    
+    <!-- Animated thermal wave -->
+    <path id="thermal-wave" d="M0,0 Q10,-8 20,0 Q30,8 40,0" stroke="white" stroke-width="1.5" fill="none">
+      <animate attributeName="d" 
+               values="M0,0 Q10,-8 20,0 Q30,8 40,0;
+                      M0,0 Q10,8 20,0 Q30,-8 40,0;
+                      M0,0 Q10,-8 20,0 Q30,8 40,0" 
+               dur="3s" 
+               repeatCount="indefinite" />
+    </path>
+    
+    <!-- Connector style -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" 
+            markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#555" />
     </marker>
   </defs>
   
-  <!-- EIS to Signal Processor Arrow -->
-  <path d="M 280 200 L 310 260" stroke="#333" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
-  <!-- TIS to Signal Processor Arrow -->
-  <path d="M 520 200 L 490 260" stroke="#333" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
-  <!-- Signal Processor to AI Engine Arrow -->
-  <path d="M 400 360 L 400 360" stroke="#333" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f9f9f9" />
   
-  <!-- Animation Effects -->
-  <!-- Electrical Signals Animation -->
-  <circle cx="250" cy="195" r="5" fill="#0066cc">
-    <animate attributeName="r" values="2;5;2" dur="2s" repeatCount="indefinite" />
-    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" />
-  </circle>
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">
+    System Architecture
+  </text>
   
-  <!-- Thermal Signals Animation -->
-  <circle cx="550" cy="195" r="5" fill="#cc6600">
-    <animate attributeName="r" values="2;5;2" dur="2.5s" repeatCount="indefinite" />
-    <animate attributeName="opacity" values="0.3;1;0.3" dur="2.5s" repeatCount="indefinite" />
-  </circle>
+  <!-- Main system outline -->
+  <rect x="50" y="80" width="700" height="440" rx="15" ry="15" 
+        fill="white" stroke="#ddd" stroke-width="2" />
+        
+  <!-- EIS Module -->
+  <g transform="translate(100, 120)">
+    <rect width="200" height="100" rx="10" ry="10" fill="url(#eis-gradient)" filter="url(#module-shadow)" />
+    <text x="100" y="40" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+      Electrical Impedance
+    </text>
+    <text x="100" y="60" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+      Module (EIS)
+    </text>
+    
+    <!-- EIS internal visualisation -->
+    <g transform="translate(30, 75)">
+      <use xlink:href="#sine-wave" />
+    </g>
+    <text x="100" y="85" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">
+      0.1Hz - 500kHz
+    </text>
+  </g>
   
-  <!-- AI Processing Animation -->
-  <circle cx="400" cy="430" r="40" fill="none" stroke="#2e7d32" stroke-width="1">
-    <animate attributeName="r" values="40;45;40" dur="3s" repeatCount="indefinite" />
-    <animate attributeName="opacity" values="0.2;0.8;0.2" dur="3s" repeatCount="indefinite" />
-  </circle>
+  <!-- TIS Module -->
+  <g transform="translate(500, 120)">
+    <rect width="200" height="100" rx="10" ry="10" fill="url(#tis-gradient)" filter="url(#module-shadow)" />
+    <text x="100" y="40" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+      Thermal Impedance
+    </text>
+    <text x="100" y="60" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+      Module (TIS)
+    </text>
+    
+    <!-- TIS internal visualisation -->
+    <g transform="translate(30, 75)">
+      <use xlink:href="#thermal-wave" />
+    </g>
+    <text x="100" y="85" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">
+      0.01Hz - 1Hz
+    </text>
+  </g>
+  
+  <!-- Integrated Signal Processor -->
+  <g transform="translate(300, 250)">
+    <rect width="200" height="100" rx="10" ry="10" fill="url(#isp-gradient)" filter="url(#module-shadow)" />
+    <text x="100" y="40" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+      Integrated Signal
+    </text>
+    <text x="100" y="60" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+      Processor
+    </text>
+    
+    <!-- Processor internals -->
+    <g transform="translate(50, 75)">
+      <rect x="0" y="-10" width="100" height="20" rx="2" ry="2" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1" />
+      <line x1="20" y1="-10" x2="20" y2="10" stroke="white" stroke-width="1" />
+      <line x1="40" y1="-10" x2="40" y2="10" stroke="white" stroke-width="1" />
+      <line x1="60" y1="-10" x2="60" y2="10" stroke="white" stroke-width="1" />
+      <line x1="80" y1="-10" x2="80" y2="10" stroke="white" stroke-width="1" />
+    </g>
+  </g>
+  
+  <!-- AI-based Analysis Engine -->
+  <g transform="translate(100, 380)">
+    <rect width="200" height="100" rx="10" ry="10" fill="url(#ai-gradient)" filter="url(#module-shadow)" />
+    <text x="100" y="40" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+      AI-based Analysis
+    </text>
+    <text x="100" y="60" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+      Engine
+    </text>
+    
+    <!-- Neural network visualization -->
+    <g transform="translate(70, 75)">
+      <!-- Input nodes -->
+      <circle cx="0" cy="-10" r="3" fill="white" />
+      <circle cx="0" cy="0" r="3" fill="white" />
+      <circle cx="0" cy="10" r="3" fill="white" />
+      
+      <!-- Hidden nodes -->
+      <circle cx="20" cy="-15" r="3" fill="white" />
+      <circle cx="20" cy="-5" r="3" fill="white" />
+      <circle cx="20" cy="5" r="3" fill="white" />
+      <circle cx="20" cy="15" r="3" fill="white" />
+      
+      <!-- Output nodes -->
+      <circle cx="40" cy="-10" r="3" fill="white" />
+      <circle cx="40" cy="0" r="3" fill="white" />
+      <circle cx="40" cy="10" r="3" fill="white" />
+      
+      <!-- Connections -->
+      <g stroke="white" stroke-width="0.5">
+        <!-- First to second layer -->
+        <line x1="0" y1="-10" x2="20" y2="-15" />
+        <line x1="0" y1="-10" x2="20" y2="-5" />
+        <line x1="0" y1="-10" x2="20" y2="5" />
+        <line x1="0" y1="-10" x2="20" y2="15" />
+        
+        <line x1="0" y1="0" x2="20" y2="-15" />
+        <line x1="0" y1="0" x2="20" y2="-5" />
+        <line x1="0" y1="0" x2="20" y2="5" />
+        <line x1="0" y1="0" x2="20" y2="15" />
+        
+        <line x1="0" y1="10" x2="20" y2="-15" />
+        <line x1="0" y1="10" x2="20" y2="-5" />
+        <line x1="0" y1="10" x2="20" y2="5" />
+        <line x1="0" y1="10" x2="20" y2="15" />
+        
+        <!-- Second to third layer -->
+        <line x1="20" y1="-15" x2="40" y2="-10" />
+        <line x1="20" y1="-15" x2="40" y2="0" />
+        <line x1="20" y1="-15" x2="40" y2="10" />
+        
+        <line x1="20" y1="-5" x2="40" y2="-10" />
+        <line x1="20" y1="-5" x2="40" y2="0" />
+        <line x1="20" y1="-5" x2="40" y2="10" />
+        
+        <line x1="20" y1="5" x2="40" y2="-10" />
+        <line x1="20" y1="5" x2="40" y2="0" />
+        <line x1="20" y1="5" x2="40" y2="10" />
+        
+        <line x1="20" y1="15" x2="40" y2="-10" />
+        <line x1="20" y1="15" x2="40" y2="0" />
+        <line x1="20" y1="15" x2="40" y2="10" />
+      </g>
+    </g>
+  </g>
+  
+  <!-- Thermal Management System -->
+  <g transform="translate(300, 380)">
+    <rect width="200" height="100" rx="10" ry="10" fill="url(#thm-gradient)" filter="url(#module-shadow)" />
+    <text x="100" y="40" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+      Thermal Management
+    </text>
+    <text x="100" y="60" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+      System (PCM)
+    </text>
+    
+    <!-- PCM visualization -->
+    <g transform="translate(70, 75)">
+      <rect x="-30" y="-10" width="60" height="20" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="1" />
+      <text x="0" y="5" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">PCM</text>
+      
+      <!-- Temperature stability indicator -->
+      <g transform="translate(50, 0)">
+        <path d="M-5,0 L5,0 M0,-5 L0,5" stroke="white" stroke-width="1.5" />
+        <circle cx="0" cy="0" r="8" stroke="white" stroke-width="1" fill="none" />
+        <text x="0" y="20" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="white">±0.1°C</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Power Management Module -->
+  <g transform="translate(500, 380)">
+    <rect width="200" height="100" rx="10" ry="10" fill="url(#pm-gradient)" filter="url(#module-shadow)" />
+    <text x="100" y="40" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+      Power Management
+    </text>
+    <text x="100" y="60" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+      Module
+    </text>
+    
+    <!-- Power visualization -->
+    <g transform="translate(100, 75)">
+      <path d="M-20,0 L-10,0 L-5,-10 L5,10 L10,0 L20,0" stroke="white" stroke-width="2" fill="none" />
+    </g>
+  </g>
+  
+  <!-- Connection Lines -->
+  <!-- EIS to Processor -->
+  <g>
+    <line x1="230" y1="170" x2="300" y2="280" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
+    <!-- Animated data flow -->
+    <use xlink:href="#data-dot">
+      <animateMotion dur="2s" repeatCount="indefinite" path="M230,170 L300,280" />
+    </use>
+  </g>
+  
+  <!-- TIS to Processor -->
+  <g>
+    <line x1="570" y1="170" x2="500" y2="280" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
+    <!-- Animated data flow -->
+    <use xlink:href="#data-dot">
+      <animateMotion dur="2s" repeatCount="indefinite" path="M570,170 L500,280" />
+    </use>
+  </g>
+  
+  <!-- Processor to AI -->
+  <g>
+    <line x1="320" y1="350" x2="250" y2="380" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
+    <!-- Animated data flow -->
+    <use xlink:href="#data-dot">
+      <animateMotion dur="1.5s" repeatCount="indefinite" path="M320,350 L250,380" />
+    </use>
+  </g>
+  
+  <!-- Processor to Thermal Management -->
+  <g>
+    <line x1="400" y1="350" x2="400" y2="380" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
+    <!-- Animated data flow -->
+    <use xlink:href="#data-dot">
+      <animateMotion dur="1.5s" repeatCount="indefinite" path="M400,350 L400,380" />
+    </use>
+  </g>
+  
+  <!-- Thermal Management to TIS -->
+  <g>
+    <line x1="440" y1="380" x2="560" y2="220" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
+    <!-- Animated data flow -->
+    <use xlink:href="#data-dot">
+      <animateMotion dur="3s" repeatCount="indefinite" path="M440,380 L560,220" />
+    </use>
+  </g>
+  
+  <!-- Power Management connections -->
+  <g>
+    <line x1="570" y1="380" x2="500" y2="320" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="570" y1="380" x2="500" y2="430" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="530" y1="380" x2="440" y2="430" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="540" y1="380" x2="200" y2="430" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="530" y1="360" x2="230" y2="170" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="570" y1="360" x2="570" y2="220" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
+  </g>
+  
+  <!-- Target Under Test -->
+  <g transform="translate(400, 100)">
+    <rect width="80" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#888" stroke-width="1" />
+    <text x="40" y="25" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#333">
+      Target
+    </text>
+    
+    <!-- Connection to EIS -->
+    <line x1="-50" y1="20" x2="-100" y2="70" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
+    
+    <!-- Connection to TIS -->
+    <line x1="130" y1="20" x2="160" y2="70" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
+  </g>
+  
+  <!-- Output Results -->
+  <g transform="translate(400, 540)">
+    <rect width="150" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#888" stroke-width="1" />
+    <text x="75" y="25" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#333">
+      System Characteristics
+    </text>
+    
+    <!-- Connection from AI -->
+    <line x1="-150" y1="-70" x2="0" y2="0" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
+  </g>
   
   <!-- Legend -->
-  <rect x="640" y="490" width="15" height="15" fill="#d1e7ff" stroke="#0066cc" stroke-width="1" />
-  <text x="660" y="502" font-family="Arial, sans-serif" font-size="12" fill="#333">Electrical Impedance</text>
-  
-  <rect x="640" y="515" width="15" height="15" fill="#ffe8d1" stroke="#cc6600" stroke-width="1" />
-  <text x="660" y="527" font-family="Arial, sans-serif" font-size="12" fill="#333">Thermal Impedance</text>
-  
-  <circle cx="647" cy="542" r="7" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1" />
-  <text x="660" y="547" font-family="Arial, sans-serif" font-size="12" fill="#333">AI Analysis</text>
+  <g transform="translate(100, 550)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">
+      Key Components:
+    </text>
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="12" fill="#333">
+      • EIS: Electrical Impedance Spectroscopy
+    </text>
+    <text x="0" y="40" font-family="Arial, sans-serif" font-size="12" fill="#333">
+      • TIS: Thermal Impedance Spectroscopy
+    </text>
+    
+    <text x="300" y="20" font-family="Arial, sans-serif" font-size="12" fill="#333">
+      • PCM: Phase Change Materials
+    </text>
+    <text x="300" y="40" font-family="Arial, sans-serif" font-size="12" fill="#333">
+      • AI: Artificial Intelligence Analysis
+    </text>
+  </g>
 </svg>
