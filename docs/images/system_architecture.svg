@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- Background and Title -->
+  <rect width="800" height="600" fill="#f8f9fa" rx="10" ry="10" />
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">Integrated Electrical-Thermal Impedance Analysis System</text>
+  
+  <!-- Main System Boundary -->
+  <rect x="50" y="80" width="700" height="470" fill="#f0f0f0" stroke="#666" stroke-width="2" rx="10" ry="10" stroke-dasharray="5,5" />
+  
+  <!-- Modules -->
+  <!-- Electrical Impedance Module (EIS) -->
+  <rect x="100" y="130" width="180" height="120" fill="#d1e7ff" stroke="#0066cc" stroke-width="2" rx="5" ry="5" />
+  <text x="190" y="160" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#0066cc">Electrical Impedance</text>
+  <text x="190" y="180" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#0066cc">Module (EIS)</text>
+  <text x="190" y="210" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">0.1Hz - 500kHz</text>
+  <text x="190" y="230" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">Frequency Range</text>
+  
+  <!-- Thermal Impedance Module (TIS) -->
+  <rect x="520" y="130" width="180" height="120" fill="#ffe8d1" stroke="#cc6600" stroke-width="2" rx="5" ry="5" />
+  <text x="610" y="160" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#cc6600">Thermal Impedance</text>
+  <text x="610" y="180" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#cc6600">Module (TIS)</text>
+  <text x="610" y="210" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">0.01Hz - 1Hz</text>
+  <text x="610" y="230" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">Thermal Response</text>
+  
+  <!-- Integrated Signal Processor -->
+  <rect x="310" y="240" width="180" height="120" fill="#e0f7fa" stroke="#00838f" stroke-width="2" rx="5" ry="5" />
+  <text x="400" y="270" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#00838f">Integrated Signal</text>
+  <text x="400" y="290" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#00838f">Processor</text>
+  <text x="400" y="320" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">FPGA-based</text>
+  <text x="400" y="340" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">Real-time Processing</text>
+  
+  <!-- AI-based Analysis Engine -->
+  <circle cx="400" cy="430" r="70" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2" />
+  <text x="400" y="420" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2e7d32">AI-based</text>
+  <text x="400" y="440" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2e7d32">Analysis Engine</text>
+  
+  <!-- Thermal Management System -->
+  <rect x="520" y="360" width="180" height="90" fill="#ffebee" stroke="#c62828" stroke-width="2" rx="5" ry="5" />
+  <text x="610" y="390" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#c62828">Thermal Management</text>
+  <text x="610" y="410" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">PCM-based Control</text>
+  
+  <!-- Power Management Module -->
+  <rect x="100" y="360" width="180" height="90" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2" rx="5" ry="5" />
+  <text x="190" y="390" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#6a1b9a">Power Management</text>
+  <text x="190" y="410" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">Efficient Delivery</text>
+  
+  <!-- Connection Lines -->
+  <!-- EIS to Signal Processor -->
+  <path d="M 280 190 L 310 250" stroke="#0066cc" stroke-width="2" fill="none" />
+  <!-- TIS to Signal Processor -->
+  <path d="M 520 190 L 490 250" stroke="#cc6600" stroke-width="2" fill="none" />
+  <!-- Signal Processor to AI Engine -->
+  <path d="M 400 360 L 400 360" stroke="#00838f" stroke-width="2" fill="none" />
+  <!-- Power to EIS -->
+  <path d="M 190 360 L 190 250" stroke="#6a1b9a" stroke-width="2" fill="none" />
+  <!-- Power to TIS -->
+  <path d="M 190 380 C 250 380 550 380 610 250" stroke="#6a1b9a" stroke-width="2" fill="none" stroke-dasharray="5,3" />
+  <!-- Thermal Management to TIS -->
+  <path d="M 610 360 L 610 250" stroke="#c62828" stroke-width="2" fill="none" />
+  
+  <!-- Data Flow Arrows -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+    </marker>
+  </defs>
+  
+  <!-- EIS to Signal Processor Arrow -->
+  <path d="M 280 200 L 310 260" stroke="#333" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+  <!-- TIS to Signal Processor Arrow -->
+  <path d="M 520 200 L 490 260" stroke="#333" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+  <!-- Signal Processor to AI Engine Arrow -->
+  <path d="M 400 360 L 400 360" stroke="#333" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+  
+  <!-- Animation Effects -->
+  <!-- Electrical Signals Animation -->
+  <circle cx="250" cy="195" r="5" fill="#0066cc">
+    <animate attributeName="r" values="2;5;2" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Thermal Signals Animation -->
+  <circle cx="550" cy="195" r="5" fill="#cc6600">
+    <animate attributeName="r" values="2;5;2" dur="2.5s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2.5s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- AI Processing Animation -->
+  <circle cx="400" cy="430" r="40" fill="none" stroke="#2e7d32" stroke-width="1">
+    <animate attributeName="r" values="40;45;40" dur="3s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.2;0.8;0.2" dur="3s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Legend -->
+  <rect x="640" y="490" width="15" height="15" fill="#d1e7ff" stroke="#0066cc" stroke-width="1" />
+  <text x="660" y="502" font-family="Arial, sans-serif" font-size="12" fill="#333">Electrical Impedance</text>
+  
+  <rect x="640" y="515" width="15" height="15" fill="#ffe8d1" stroke="#cc6600" stroke-width="1" />
+  <text x="660" y="527" font-family="Arial, sans-serif" font-size="12" fill="#333">Thermal Impedance</text>
+  
+  <circle cx="647" cy="542" r="7" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1" />
+  <text x="660" y="547" font-family="Arial, sans-serif" font-size="12" fill="#333">AI Analysis</text>
+</svg>
