@@ -1,0 +1,87 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 450">
+    <defs>
+        <linearGradient id="heatGradient" x1="0%" y1="0%" x2="100%" y1="0%">
+            <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#9b59b6;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#e74c3c;stop-opacity:1" />
+        </linearGradient>
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+            <feOffset dx="2" dy="2" result="offsetblur" />
+            <feComponentTransfer>
+                <feFuncA type="linear" slope="0.5"/>
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="800" height="450" fill="#f5f5f5" rx="10" ry="10" />
+    
+    <!-- Title -->
+    <text x="400" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold" fill="#2c3e50">Thermal Impedance Concept</text>
+    
+    <!-- Left Side: Thermal Stimulus and Response -->
+    <rect x="100" y="80" width="250" height="300" rx="10" ry="10" fill="white" stroke="#bdc3c7" stroke-width="2" filter="url(#shadow)" />
+    
+    <!-- Thermal Stimulus (Input) -->
+    <text x="225" y="105" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold" fill="#2c3e50">Thermal Stimulus</text>
+    <path d="M 125,150 L 125,220 L 325,220 L 325,150 Z" fill="none" stroke="#3498db" stroke-width="2" />
+    <path d="M 125,150 L 125,220 L 225,220 L 225,150 Z" fill="url(#heatGradient)" opacity="0.3" />
+    
+    <!-- Sine Wave for Oscillating Heat Input -->
+    <path d="M 125,185 
+             C 141,155 159,215 175,185 
+             C 191,155 209,215 225,185 
+             C 241,155 259,215 275,185 
+             C 291,155 309,215 325,185" 
+          fill="none" stroke="#e74c3c" stroke-width="2.5" />
+    
+    <text x="225" y="245" font-family="Arial" font-size="14" text-anchor="middle" fill="#7f8c8d">Periodic Heat Input</text>
+    
+    <!-- Thermal Response (Output) -->
+    <text x="225" y="275" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold" fill="#2c3e50">Thermal Response</text>
+    <path d="M 125,300 L 125,370 L 325,370 L 325,300 Z" fill="none" stroke="#3498db" stroke-width="2" />
+    
+    <!-- Sine Wave for Temperature Response (Phase Shifted) -->
+    <path d="M 125,335 
+             C 141,305 159,365 175,335 
+             C 191,305 209,365 225,335 
+             C 241,305 259,365 275,335 
+             C 291,305 309,365 325,335" 
+          fill="none" stroke="#9b59b6" stroke-width="2.5" transform="translate(25,0)" />
+    
+    <text x="225" y="395" font-family="Arial" font-size="14" text-anchor="middle" fill="#7f8c8d">Temperature Response (Phase Shifted)</text>
+    
+    <!-- Right Side: Thermal Impedance Concept -->
+    <rect x="450" y="80" width="250" height="300" rx="10" ry="10" fill="white" stroke="#bdc3c7" stroke-width="2" filter="url(#shadow)" />
+    
+    <text x="575" y="105" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold" fill="#2c3e50">Thermal Impedance Components</text>
+    
+    <!-- Material Layers -->
+    <rect x="480" y="130" width="190" height="40" fill="#3498db" opacity="0.2" stroke="#2980b9" stroke-width="1" />
+    <rect x="480" y="170" width="190" height="30" fill="#e74c3c" opacity="0.2" stroke="#c0392b" stroke-width="1" />
+    <rect x="480" y="200" width="190" height="50" fill="#9b59b6" opacity="0.2" stroke="#8e44ad" stroke-width="1" />
+    <rect x="480" y="250" width="190" height="35" fill="#2ecc71" opacity="0.2" stroke="#27ae60" stroke-width="1" />
+    
+    <text x="575" y="155" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">Thermal Resistance (R)</text>
+    <text x="575" y="185" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">Thermal Interface (I)</text>
+    <text x="575" y="225" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">Thermal Capacitance (C)</text>
+    <text x="575" y="270" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">Heat Spreading (S)</text>
+    
+    <!-- Impedance Formula -->
+    <rect x="480" y="310" width="190" height="50" rx="5" ry="5" fill="#f1c40f" opacity="0.2" stroke="#f39c12" stroke-width="1" />
+    <text x="575" y="335" font-family="Arial" font-size="14" text-anchor="middle" font-style="italic" fill="#2c3e50">Z(ω) = R + j(ωL - 1/ωC)</text>
+    <text x="575" y="355" font-family="Arial" font-size="12" text-anchor="middle" fill="#7f8c8d">Thermal Impedance Formula</text>
+    
+    <!-- Connecting Arrow -->
+    <path d="M 360,230 L 440,230" stroke="#95a5a6" stroke-width="2" stroke-dasharray="5,5" />
+    <polygon points="440,230 430,225 430,235" fill="#95a5a6" />
+    
+    <!-- Footer Notes -->
+    <text x="400" y="425" font-family="Arial" font-size="14" text-anchor="middle" fill="#2c3e50">Frequency-dependent behavior of heat transfer through materials</text>
+</svg>
