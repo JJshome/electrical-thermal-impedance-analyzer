@@ -2,10 +2,13 @@
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue)](https://www.python.org/)
+[![Status](https://img.shields.io/badge/Status-Active-green)]()
 
 ## Overview
 
 This repository contains an implementation of an advanced integrated electrical-thermal impedance analysis system. The system combines electrical impedance spectroscopy (EIS) and thermal impedance spectroscopy (TIS) techniques to provide comprehensive characterization of various systems including energy storage devices, semiconductor components, and biological tissues.
+
+![Integrated Impedance System](docs/images/integrated_impedance_system.svg)
 
 ## Key Features
 
@@ -16,6 +19,69 @@ This repository contains an implementation of an advanced integrated electrical-
 - **Multi-frequency Analysis**: Efficient data acquisition across multiple frequencies
 - **Real-time Processing**: FPGA-based signal processing for real-time analysis
 - **Adaptive Measurement**: Dynamic adjustment of measurement parameters based on system response
+
+## Understanding Impedance Analysis
+
+### What is Electrical Impedance?
+
+Electrical impedance is a measure of opposition to alternating current (AC) flow in a circuit. Unlike resistance, which only applies to direct current (DC), impedance accounts for both magnitude and phase differences between voltage and current. It combines:
+
+- **Resistance (R)**: Energy dissipation component
+- **Reactance (X)**: Energy storage component (capacitive and inductive)
+
+Electrical impedance is represented as a complex number:
+
+```
+Z = R + jX
+```
+
+Where:
+- Z is the impedance (Ohms, Ω)
+- R is the resistance (Ohms, Ω)
+- X is the reactance (Ohms, Ω)
+- j is the imaginary unit (√-1)
+
+### What is Thermal Impedance?
+
+Thermal impedance is a concept analogous to electrical impedance but applied to heat transfer. It describes how a material or system resists the flow of heat when subjected to a time-varying thermal stimulus.
+
+![Thermal Impedance Concept](docs/images/thermal_impedance_concept.svg)
+
+Thermal impedance includes:
+
+- **Thermal Resistance (R)**: Opposition to steady-state heat flow (K/W)
+- **Thermal Capacitance (C)**: Ability to store thermal energy (J/K)
+- **Thermal Mass Effects**: Analogous to inductance in electrical systems
+
+Thermal impedance is frequency-dependent and provides insights into:
+- Heat propagation dynamics
+- Material thermal properties
+- Interface thermal behavior
+- Thermal management effectiveness
+
+### Comparing Electrical and Thermal Impedance
+
+![Electrical vs Thermal Impedance](docs/images/electrical_vs_thermal_impedance.svg)
+
+### Thermal Impedance Spectroscopy (TIS)
+
+Thermal Impedance Spectroscopy involves measuring thermal impedance across a range of frequencies to characterize a system's thermal response.
+
+![Thermal Impedance Spectroscopy](docs/images/thermal_impedance_spectroscopy.svg)
+
+Key aspects of TIS:
+1. Apply periodic thermal stimuli at different frequencies
+2. Measure temperature response (amplitude and phase)
+3. Calculate thermal impedance at each frequency
+4. Analyze the resulting impedance spectrum
+5. Model the system using thermal equivalent circuits
+
+TIS reveals information that steady-state thermal measurements cannot provide, including:
+- Thermal time constants
+- Heat propagation pathways
+- Thermal interface quality
+- Structural defects
+- Thermal capacitance distribution
 
 ## Applications
 
@@ -44,11 +110,13 @@ This technology has applications in multiple domains:
 - Aging and degradation studies
 - Structure-property relationships
 
+![Application Areas](docs/images/applications.svg)
+
 ## System Architecture
 
 The system consists of several integrated components:
 
-![System Architecture](docs/images/system_architecture.png)
+![System Architecture](docs/images/system_architecture.svg)
 
 - **Electrical Impedance Module (EIS)**: Measures electrical impedance spectra
 - **Thermal Impedance Module (TIS)**: Measures thermal impedance spectra
@@ -56,6 +124,10 @@ The system consists of several integrated components:
 - **AI-based Analysis Engine**: Extracts system characteristics from impedance data
 - **Thermal Management System**: Maintains precise temperature control
 - **Power Management Module**: Ensures efficient power delivery
+
+## Data Flow
+
+![Data Flow](docs/images/data_flow.svg)
 
 ## Repository Structure
 
@@ -129,6 +201,7 @@ Key features:
 - Aging trend analysis
 - Equivalent circuit parameter extraction
 - Remaining useful life prediction
+- Thermal runaway early detection
 
 Run the battery monitoring example:
 
@@ -145,6 +218,7 @@ Key features:
 - Sleep quality assessment
 - Sleep disorders detection (apnea, limb movements)
 - Sleep metrics calculation
+- Tissue hydration monitoring
 
 Run the sleep monitoring example:
 
@@ -162,6 +236,7 @@ The EIS module measures the electrical impedance of a system across a wide frequ
 - Low-noise current source
 - High-resolution voltage measurement
 - Phase-sensitive detection
+- Multi-frequency simultaneous acquisition
 
 ### Thermal Impedance Spectroscopy (TIS)
 
@@ -171,6 +246,7 @@ The TIS module measures the thermal impedance of a system by applying controlled
 - High-resolution temperature sensing
 - Phase Change Material (PCM) thermal management
 - Adaptive thermal control
+- Thermal signal correlation analysis
 
 ### Integrated Signal Processing
 
@@ -180,6 +256,17 @@ The system integrates electrical and thermal impedance data to provide a compreh
 - Feature extraction
 - Equivalent circuit modeling
 - AI-based pattern recognition
+- Real-time anomaly detection
+
+### AI-Based Analysis Engine
+
+The AI analysis engine employs advanced machine learning techniques:
+
+- Deep learning for impedance pattern recognition
+- Convolutional neural networks for feature extraction
+- Long short-term memory (LSTM) networks for temporal pattern analysis
+- Transfer learning for application-specific adaptation
+- Uncertainty quantification and prediction confidence
 
 ## Contributing
 
