@@ -1,100 +1,91 @@
-# Software Implementation of the Integrated Electrical-Thermal Impedance Analyzer
+# Software Implementation
 
-## Overview
+This directory contains the software implementation for the Integrated Electrical-Thermal Impedance Analysis System.
 
-This directory contains the software implementation of the Integrated Electrical-Thermal Impedance Analysis System based on the patented technology by Ucaretron Inc. The software is designed to be modular, extensible, and capable of handling a wide range of applications from battery characterization to semiconductor thermal mapping and biological tissue analysis.
+## Software Architecture
 
-## Architecture
+The software is organized into several key modules:
 
-The software architecture follows a layered approach with clear separation of concerns:
+### 1. Acquisition Module
 
+Located in the `acquisition/` directory, this module handles all data acquisition functions:
+
+- Hardware communication and control
+- Signal generation
+- Data acquisition
+- Calibration procedures
+- Measurement sequencing
+
+### 2. Processing Module
+
+Located in the `processing/` directory, this module performs signal processing on the raw data:
+
+- Digital filtering
+- Noise removal
+- Impedance calculation
+- Frequency domain analysis
+- Time domain analysis
+
+### 3. Analysis Module
+
+Located in the `analysis/` directory, this module extracts meaningful information from the processed data:
+
+- Equivalent circuit modeling
+- Parameter extraction
+- Cross-domain correlation analysis
+- Temporal trend analysis
+- Machine learning models for pattern recognition
+
+### 4. Visualization Module
+
+Located in the `visualization/` directory, this module provides visualization tools for the analyzed data:
+
+- Real-time data plotting
+- Interactive visualization
+- Spectra comparison
+- Export capabilities
+
+### 5. Applications Module
+
+Located in the `applications/` directory, this module contains application-specific implementations:
+
+- Battery health monitoring
+- Biomedical applications
+- Semiconductor testing
+- Material characterization
+
+## Implementation Details
+
+### Core Classes
+
+- `IntegratedImpedanceAnalyzer`: Main class that coordinates all functionality
+- `ElectricalImpedanceModule`: Handles EIS measurements
+- `ThermalImpedanceModule`: Handles TIS measurements
+- `SignalProcessor`: Processes raw impedance data
+- `EquivalentCircuitModeler`: Fits data to equivalent circuit models
+- `MachineLearningEngine`: AI-based analysis and pattern recognition
+
+### Dependencies
+
+The software relies on the following external libraries:
+
+- NumPy/SciPy for numerical calculations
+- Matplotlib for visualization
+- PyTorch/TensorFlow for AI-based analysis
+- Pandas for data management
+
+## Getting Started
+
+### Installation
+
+```bash
+pip install -r requirements.txt
 ```
-software/
-├── acquisition/       # Data acquisition modules
-│   ├── electrical_impedance.py    # Electrical impedance measurement
-│   ├── thermal_impedance.py       # Thermal impedance measurement  
-│   └── integrated_impedance_analyzer.py  # Main analyzer class
-├── processing/        # Signal processing algorithms
-│   ├── signal_processing.py       # General signal processing utilities
-│   ├── electrical_models.py       # Electrical equivalent circuit models
-│   ├── thermal_models.py          # Thermal equivalent circuit models
-│   └── noise_reduction.py         # Noise filtering and reduction
-├── analysis/          # Data analysis and AI models
-│   ├── feature_extraction.py      # Extract features from impedance spectra
-│   ├── model_fitting.py           # Fit impedance data to equivalent models
-│   ├── impedance_patterns.py      # Pattern recognition for impedance spectra
-│   └── deep_learning/             # Deep learning models for impedance analysis
-├── visualization/     # Data visualization tools
-│   ├── impedance_plots.py         # Specialized impedance visualization
-│   ├── thermal_mapping.py         # Thermal distribution visualization
-│   └── interactive_dashboard.py   # Interactive analysis dashboard
-└── applications/      # Application-specific implementations
-    ├── battery_analysis.py        # Battery state-of-health monitoring
-    ├── tissue_characterization.py # Biological tissue analysis
-    ├── semiconductor_mapping.py   # Semiconductor thermal mapping
-    └── materials_research.py      # New materials characterization
-```
 
-## Core Components
-
-### Integrated Impedance Analyzer (`acquisition/integrated_impedance_analyzer.py`)
-
-The core class that integrates electrical and thermal impedance measurements. It provides:
-
-- Synchronized acquisition of electrical and thermal impedance data
-- Wide frequency range measurements (0.1Hz to 500kHz for electrical, 0.01Hz to 1Hz for thermal)
-- Calibration procedures to ensure measurement accuracy
-- Hardware abstraction layer for different measurement setups
-- Advanced signal processing for noise reduction
-
-### Electrical and Thermal Models
-
-The system includes comprehensive equivalent circuit models for both electrical and thermal impedance:
-
-#### Electrical Models:
-- Randles circuit for electrochemical systems
-- RC/RLC networks for electronic components
-- Cole-Cole and Debye models for biological tissues
-- Custom models for specialized applications
-
-#### Thermal Models:
-- Cauer and Foster thermal networks
-- Distributed parameter models for complex geometries
-- Non-linear thermal models for temperature-dependent systems
-
-### AI-Based Analysis Engine
-
-The AI module provides advanced analysis capabilities:
-
-- Feature extraction from impedance spectra
-- Pattern recognition for fault detection and classification
-- Deep learning models for complex impedance pattern analysis
-- Predictive models for system behavior and degradation
-
-### Visualization Tools
-
-The visualization module offers specialized plotting and interactive analysis tools:
-
-- Nyquist and Bode plots for impedance spectra
-- Cole-Cole plots for biological tissue analysis
-- 3D thermal mapping for semiconductor analysis
-- Time-domain visualization for dynamic system monitoring
-
-## Key Features
-
-1. **Multi-frequency Analysis**: Efficient data acquisition across multiple frequencies using advanced frequency sweep techniques
-2. **Real-time Processing**: Optimized algorithms for real-time signal processing and analysis
-3. **Adaptive Measurement**: Dynamic adjustment of measurement parameters based on system response
-4. **PCM-based Thermal Management**: Software control of Phase Change Materials (PCM) for precise temperature control
-5. **FPGA Integration**: Support for FPGA-based hardware acceleration for high-speed data processing
-6. **Cross-platform Support**: Implementation in Python with hardware abstraction to support various platforms
-
-## Usage Examples
-
-Basic usage example:
+### Basic Usage
 
 ```python
-from acquisition.integrated_impedance_analyzer import IntegratedImpedanceAnalyzer
+from impedance_analyzer import IntegratedImpedanceAnalyzer
 
 # Initialize the analyzer
 analyzer = IntegratedImpedanceAnalyzer()
@@ -117,67 +108,33 @@ characteristics = analyzer.analyze(results)
 analyzer.plot_impedance_spectra(results)
 ```
 
-For more detailed examples, please refer to the files in the `examples/` directory at the root of the repository.
+## Development Guidelines
 
-## Extended Applications
+### Coding Standards
 
-The software architecture is designed to be extensible for a wide range of applications:
+- PEP 8 compliance
+- Type hints for function signatures
+- Comprehensive docstrings
+- Unit tests for all functionality
 
-1. **Energy Storage Systems**:
-   - Battery state-of-health monitoring
-   - Lithium-ion battery aging analysis
-   - Supercapacitor characterization
-   - Fuel cell diagnostics
+### Testing
 
-2. **Biomedical Applications**:
-   - Non-invasive tissue characterization
-   - Hydration status assessment
-   - Blood glucose monitoring
-   - Sleep stage analysis
+The `tests/` directory contains unit tests for all software components. Run tests using:
 
-3. **Semiconductor Industry**:
-   - Thermal mapping and fault detection
-   - Performance optimization of electronic components
-   - Reliability testing and failure prediction
-   - Package thermal resistance measurement
+```bash
+pytest tests/
+```
 
-4. **Materials Science**:
-   - New materials characterization
-   - Aging and degradation studies
-   - Thermal and electrical conductivity mapping
-   - Structure-property relationships analysis
+### Documentation
 
-## Integration with Hardware
+All code should be documented following the Google Python Style Guide for docstrings.
 
-The software is designed to integrate with various hardware configurations:
+## Future Development
 
-- **Laboratory Setup**: Integration with standard lab equipment via GPIB, USB, or Ethernet
-- **Embedded Systems**: Implementation on microcontrollers for portable applications
-- **FPGA-based Systems**: High-performance data acquisition and processing
-- **Custom Hardware**: Support for specialized measurement hardware through hardware abstraction layers
+Planned software improvements include:
 
-## Future Developments
-
-Planned enhancements to the software include:
-
-1. **Cloud Integration**: Remote data storage and analysis capabilities
-2. **Advanced AI Models**: Implementation of more sophisticated deep learning algorithms
-3. **Mobile Applications**: Smartphone interfaces for portable systems
-4. **Real-time Monitoring**: Continuous monitoring with alert systems
-5. **Database Integration**: Systematic storage and retrieval of measurement data
-6. **Distributed Measurement**: Support for multi-point, synchronized measurements
-
-## Contributing
-
-Contributions to the software are welcome. Please refer to the main repository's contributing guidelines for more information.
-
-## License
-
-This software is licensed under the MIT License. See the LICENSE file in the main repository for details.
-
-## Patent Information
-
-This software is based on patented technology:
-- **Patent Title**: 열 임피던스와 전기 임피던스 통합 분석 시스템 및 방법 (Integrated Electrical-Thermal Impedance Analysis System and Method)
-- **Inventor**: Jihwan Jang (장지환)
-- **Filing Entity**: Ucaretron Inc. (㈜유케어트론)
+- Real-time analysis capabilities
+- Cloud connectivity for remote monitoring
+- Advanced machine learning models for specific applications
+- Mobile application for remote control and monitoring
+- Extended data visualization capabilities
