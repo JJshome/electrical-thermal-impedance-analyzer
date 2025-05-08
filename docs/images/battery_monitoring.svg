@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <filter id="boxShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3" />
+    </filter>
+    <linearGradient id="batteryGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a3c2c2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#669999;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sensorGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffcc99;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff9933;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bmsGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#b3ccff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6699ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="mcuGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d9b3ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b366ff;stop-opacity:1" />
+    </linearGradient>
+    <marker id="arrowHead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+    <pattern id="batteryPattern" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="rotate(45 0 0)">
+      <rect width="10" height="20" fill="#4d7f7f" fill-opacity="0.3" />
+    </pattern>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#333" font-weight="bold">Battery Management System Application</text>
+  
+  <!-- Battery Pack (510) -->
+  <rect x="100" y="150" width="200" height="250" rx="10" ry="10" fill="url(#batteryGradient)" stroke="#4d7f7f" stroke-width="2" filter="url(#boxShadow)" />
+  <text x="200" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#333" font-weight="bold">Battery Pack</text>
+  <text x="200" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#666">(510)</text>
+  
+  <!-- Battery Cells -->
+  <rect x="125" y="175" width="50" height="150" rx="5" ry="5" fill="#f2f2f2" stroke="#4d7f7f" stroke-width="1.5" />
+  <rect x="125" y="175" width="50" height="150" rx="5" ry="5" fill="url(#batteryPattern)" />
+  <rect x="125" y="325" width="50" height="10" rx="2" ry="2" fill="#4d7f7f" />
+  
+  <rect x="175" y="175" width="50" height="150" rx="5" ry="5" fill="#f2f2f2" stroke="#4d7f7f" stroke-width="1.5" />
+  <rect x="175" y="175" width="50" height="150" rx="5" ry="5" fill="url(#batteryPattern)" />
+  <rect x="175" y="325" width="50" height="10" rx="2" ry="2" fill="#4d7f7f" />
+  
+  <rect x="225" y="175" width="50" height="150" rx="5" ry="5" fill="#f2f2f2" stroke="#4d7f7f" stroke-width="1.5" />
+  <rect x="225" y="175" width="50" height="150" rx="5" ry="5" fill="url(#batteryPattern)" />
+  <rect x="225" y="325" width="50" height="10" rx="2" ry="2" fill="#4d7f7f" />
+  
+  <!-- Sensor Modules (520) -->
+  <circle cx="150" cy="200" r="15" fill="url(#sensorGradient)" stroke="#cc6600" stroke-width="1.5" filter="url(#boxShadow)" />
+  <text x="150" cy="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff" font-weight="bold">EIS</text>
+  <text x="150" cy="208" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#fff">TIS</text>
+  
+  <circle cx="200" cy="200" r="15" fill="url(#sensorGradient)" stroke="#cc6600" stroke-width="1.5" filter="url(#boxShadow)" />
+  <text x="200" cy="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff" font-weight="bold">EIS</text>
+  <text x="200" cy="208" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#fff">TIS</text>
+  
+  <circle cx="250" cy="200" r="15" fill="url(#sensorGradient)" stroke="#cc6600" stroke-width="1.5" filter="url(#boxShadow)" />
+  <text x="250" cy="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff" font-weight="bold">EIS</text>
+  <text x="250" cy="208" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#fff">TIS</text>
+  
+  <text x="250" y="250" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#666">Electrical-Thermal</text>
+  <text x="250" y="270" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#666">Impedance Sensors</text>
+  <text x="250" y="290" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#666">(520)</text>
+  
+  <!-- Battery Management IC (530) -->
+  <rect x="400" y="150" width="150" height="100" rx="5" ry="5" fill="url(#bmsGradient)" stroke="#3366cc" stroke-width="2" filter="url(#boxShadow)" />
+  <text x="475" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#333" font-weight="bold">Battery Management IC</text>
+  <text x="475" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#666">(530)</text>
+  
+  <!-- IC Chip Details -->
+  <rect x="425" y="170" width="100" height="60" rx="2" ry="2" fill="#e6e6e6" stroke="#3366cc" stroke-width="1" />
+  <line x1="435" y1="170" x2="435" y2="230" stroke="#3366cc" stroke-width="0.5" />
+  <line x1="445" y1="170" x2="445" y2="230" stroke="#3366cc" stroke-width="0.5" />
+  <line x1="455" y1="170" x2="455" y2="230" stroke="#3366cc" stroke-width="0.5" />
+  <line x1="465" y1="170" x2="465" y2="230" stroke="#3366cc" stroke-width="0.5" />
+  <line x1="475" y1="170" x2="475" y2="230" stroke="#3366cc" stroke-width="0.5" />
+  <line x1="485" y1="170" x2="485" y2="230" stroke="#3366cc" stroke-width="0.5" />
+  <line x1="495" y1="170" x2="495" y2="230" stroke="#3366cc" stroke-width="0.5" />
+  <line x1="505" y1="170" x2="505" y2="230" stroke="#3366cc" stroke-width="0.5" />
+  <line x1="515" y1="170" x2="515" y2="230" stroke="#3366cc" stroke-width="0.5" />
+  
+  <text x="475" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#333" font-weight="bold">BQ76940</text>
+  <text x="475" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Texas Instruments</text>
+  
+  <!-- Main Control Unit (540) -->
+  <rect x="400" y="300" width="150" height="100" rx="5" ry="5" fill="url(#mcuGradient)" stroke="#8c1aff" stroke-width="2" filter="url(#boxShadow)" />
+  <text x="475" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#333" font-weight="bold">Main Control Unit</text>
+  <text x="475" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#666">(540)</text>
+  
+  <!-- MCU Details -->
+  <rect x="425" y="320" width="100" height="60" rx="2" ry="2" fill="#f0e6ff" stroke="#8c1aff" stroke-width="1" />
+  <text x="475" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#333" font-weight="bold">STM32F405</text>
+  <text x="475" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">ARM Cortex-M4</text>
+  <text x="475" y="375" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">200MHz, 1MB Flash</text>
+  
+  <!-- Connections -->
+  <path d="M300,200 L400,200" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arrowHead)" />
+  <text x="350" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">Sensor Data</text>
+  
+  <path d="M400,350 L300,350 L300,250" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arrowHead)" />
+  <text x="350" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">Control Signals</text>
+  
+  <path d="M475,250 L475,300" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arrowHead)" />
+  
+  <!-- Results Graph -->
+  <rect x="600" y="150" width="150" height="250" rx="5" ry="5" fill="#f9f9f9" stroke="#ccc" stroke-width="2" filter="url(#boxShadow)" />
+  <text x="675" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#333" font-weight="bold">Analysis Results</text>
+  
+  <!-- Graph Elements -->
+  <rect x="620" y="170" width="110" height="210" fill="#fff" stroke="#ccc" stroke-width="1" />
+  <line x1="620" y1="380" x2="730" y2="380" stroke="#333" stroke-width="1" />
+  <line x1="620" y1="170" x2="620" y2="380" stroke="#333" stroke-width="1" />
+  
+  <!-- Graph Data -->
+  <polyline points="620,350 630,348 640,345 650,340 660,330 670,320 680,310 690,290 700,260 710,230 720,180" fill="none" stroke="#3366cc" stroke-width="2" />
+  <polyline points="620,345 630,343 640,340 650,335 660,330 670,322 680,315 690,300 700,280 710,250 720,200" fill="none" stroke="#cc0000" stroke-width="2" stroke-dasharray="5,2" />
+  
+  <text x="620" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">0</text>
+  <text x="670" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">500</text>
+  <text x="720" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">1000</text>
+  <text x="675" y="408" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Charge Cycles</text>
+  
+  <text x="610" y="380" text-anchor="end" font-family="Arial, sans-serif" font-size="8" fill="#666">0%</text>
+  <text x="610" y="275" text-anchor="end" font-family="Arial, sans-serif" font-size="8" fill="#666">50%</text>
+  <text x="610" y="170" text-anchor="end" font-family="Arial, sans-serif" font-size="8" fill="#666">100%</text>
+  <text x="585" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666" transform="rotate(-90 585 275)">Battery Capacity</text>
+  
+  <!-- Legend -->
+  <rect x="640" y="190" width="10" height="5" fill="none" stroke="#3366cc" stroke-width="2" />
+  <text x="655" y="195" text-anchor="start" font-family="Arial, sans-serif" font-size="8" fill="#666">Measured</text>
+  <rect x="640" y="205" width="10" height="5" fill="none" stroke="#cc0000" stroke-width="2" stroke-dasharray="5,2" />
+  <text x="655" y="210" text-anchor="start" font-family="Arial, sans-serif" font-size="8" fill="#666">Predicted</text>
+  
+  <!-- Connect MCU to Results -->
+  <path d="M550,350 L600,350" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arrowHead)" />
+  <text x="575" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">Analysis</text>
+  <text x="575" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">Results</text>
+  
+  <!-- Footer -->
+  <text x="400" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">Integrated Electrical-Thermal Impedance Analysis for Battery State of Health Monitoring</text>
+</svg>
