@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="300" viewBox="0 0 800 300">
+  <defs>
+    <filter id="boxShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.3" />
+    </filter>
+    <linearGradient id="blockGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e6f2ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#cce6ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="blockGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffebcc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffe0b3;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="blockGradient3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e6ffe6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ccffcc;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="blockGradient4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f9e6ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f2ccff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="blockGradient5" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffe6e6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffcccc;stop-opacity:1" />
+    </linearGradient>
+    <marker id="arrowHead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#333" font-weight="bold">Multi-Frequency Electrical Impedance Measurement Circuit</text>
+  
+  <!-- Block 1: Signal Generator (310) -->
+  <rect x="80" y="120" width="120" height="80" rx="5" ry="5" fill="url(#blockGradient1)" stroke="#4a6fa5" stroke-width="2" filter="url(#boxShadow)" />
+  <text x="140" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333" font-weight="bold">Signal</text>
+  <text x="140" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333" font-weight="bold">Generator</text>
+  
+  <!-- Sine Wave Icon -->
+  <path d="M110,185 Q120,165 130,185 Q140,205 150,185 Q160,165 170,185" stroke="#4a6fa5" stroke-width="2" fill="none" />
+  
+  <!-- Block Label -->
+  <text x="140" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">(310)</text>
+  
+  <!-- Block 2: Current Injection Circuit (320) -->
+  <polygon points="240,120 320,120 340,160 320,200 240,200" fill="url(#blockGradient2)" stroke="#e69500" stroke-width="2" filter="url(#boxShadow)" />
+  <text x="290" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333" font-weight="bold">Current</text>
+  <text x="290" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333" font-weight="bold">Injection</text>
+  
+  <!-- Arrow Icon -->
+  <path d="M265,185 L315,185 M305,175 L315,185 L305,195" stroke="#e69500" stroke-width="2" fill="none" />
+  
+  <!-- Block Label -->
+  <text x="290" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">(320)</text>
+  
+  <!-- DUT (Device Under Test) -->
+  <rect x="380" y="140" width="80" height="40" rx="3" ry="3" fill="#f2f2f2" stroke="#999" stroke-width="2" stroke-dasharray="5,3" />
+  <text x="420" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333" font-weight="bold">DUT</text>
+  
+  <!-- Block 3: Voltage Measurement Circuit (330) -->
+  <rect x="500" y="120" width="120" height="80" rx="5" ry="5" fill="url(#blockGradient3)" stroke="#339933" stroke-width="2" filter="url(#boxShadow)" />
+  <text x="560" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333" font-weight="bold">Voltage</text>
+  <text x="560" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333" font-weight="bold">Measurement</text>
+  <text x="560" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333" font-weight="bold">Circuit</text>
+  
+  <!-- Voltmeter Icon -->
+  <circle cx="560" cy="125" r="3" fill="#339933" />
+  <path d="M555,125 L550,125 L550,135 L570,135 L570,125 L565,125" stroke="#339933" stroke-width="1.5" fill="none" />
+  <path d="M557,125 L557,120 M563,125 L563,120" stroke="#339933" stroke-width="1.5" fill="none" />
+  
+  <!-- Block Label -->
+  <text x="560" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">(330)</text>
+  
+  <!-- Block 4: Phase Detector (340) -->
+  <circle cx="680" cy="160" r="40" fill="url(#blockGradient4)" stroke="#9900cc" stroke-width="2" filter="url(#boxShadow)" />
+  <text x="680" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333" font-weight="bold">Phase</text>
+  <text x="680" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333" font-weight="bold">Detector</text>
+  
+  <!-- Phase Diagram Icon -->
+  <circle cx="680" cy="130" r="10" stroke="#9900cc" stroke-width="1" fill="none" />
+  <path d="M680,130 L688,125" stroke="#9900cc" stroke-width="1.5" fill="none" />
+  <path d="M675,120 L685,140" stroke="#9900cc" stroke-width="1" fill="none" stroke-dasharray="2,1" />
+  
+  <!-- Block Label -->
+  <text x="680" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">(340)</text>
+  
+  <!-- Block 5: ADC (350) -->
+  <rect x="640" y="230" width="80" height="50" rx="3" ry="3" fill="url(#blockGradient5)" stroke="#cc0000" stroke-width="2" filter="url(#boxShadow)" />
+  <text x="680" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333" font-weight="bold">ADC</text>
+  <text x="680" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">(350)</text>
+  
+  <!-- Connection Arrows -->
+  <!-- Signal Generator to Current Injection -->
+  <path d="M200,160 L240,160" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arrowHead)" />
+  
+  <!-- Current Injection to DUT -->
+  <path d="M340,160 L380,160" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arrowHead)" />
+  
+  <!-- DUT to Voltage Measurement -->
+  <path d="M460,160 L500,160" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arrowHead)" />
+  
+  <!-- Voltage Measurement to Phase Detector -->
+  <path d="M620,160 L640,160" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arrowHead)" />
+  
+  <!-- Signal Generator to Phase Detector (Reference Signal) -->
+  <path d="M140,80 L140,120 M140,80 L680,80 L680,120" fill="none" stroke="#333" stroke-width="1.5" stroke-dasharray="4,2" />
+  <text x="410" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">Reference Signal</text>
+  
+  <!-- Phase Detector to ADC -->
+  <path d="M680,200 L680,230" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arrowHead)" />
+  
+  <!-- Legend -->
+  <rect x="50" y="250" width="500" height="30" rx="5" ry="5" fill="#f8f9fa" stroke="#ddd" stroke-width="1" />
+  <text x="60" y="270" font-family="Arial, sans-serif" font-size="12" fill="#666">Note: The multi-frequency circuit operates across 100Hz to 5kHz with precision signal generation and phase detection</text>
+</svg>
