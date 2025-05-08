@@ -59,6 +59,8 @@ Thermal impedance is frequency-dependent and provides insights into:
 - Interface thermal behavior
 - Thermal management effectiveness
 
+For a more detailed explanation of thermal impedance, see our [thermal impedance documentation](docs/thermal_impedance/README.md).
+
 ![Thermal Impedance Concept](docs/images/thermal_impedance_concept.svg)
 
 ### Comparing Electrical and Thermal Impedance
@@ -84,6 +86,8 @@ TIS reveals information that steady-state thermal measurements cannot provide, i
 - Thermal interface quality
 - Structural defects
 - Thermal capacitance distribution
+
+Our implementation is based on the heat-pulse response analysis method described by Barsoukov et al. (2002). For details about this method applied to batteries, see our [battery thermal impedance documentation](docs/thermal_impedance/battery_thermal_impedance.md).
 
 ## Applications
 
@@ -135,6 +139,7 @@ The system consists of several integrated components:
 
 ```
 ├── docs/                  # Documentation
+│   ├── thermal_impedance/ # Detailed thermal impedance documentation
 ├── hardware/              # Hardware designs and interfaces
 ├── software/              # Software implementation
 │   ├── acquisition/       # Data acquisition modules
@@ -144,9 +149,10 @@ The system consists of several integrated components:
 │   └── applications/      # Application-specific implementations
 ├── simulations/           # Simulation environments
 ├── tests/                 # Test suites
-└── examples/              # Example applications
-    ├── sleep_monitoring.py   # Sleep monitoring implementation
-    └── battery_monitoring.py # Battery health monitoring implementation
+├── examples/              # Example applications
+│   ├── sleep_monitoring.py   # Sleep monitoring implementation
+│   └── battery_monitoring.py # Battery health monitoring implementation
+└── REFERENCES.md          # Scientific references and patents
 ```
 
 ## Getting Started
@@ -270,13 +276,24 @@ The AI analysis engine employs advanced machine learning techniques:
 - Transfer learning for application-specific adaptation
 - Uncertainty quantification and prediction confidence
 
+## Scientific Background and References
+
+This project builds upon pioneering work in the field of impedance spectroscopy, particularly:
+
+1. The thermal impedance spectroscopy method developed by Barsoukov et al. (2002) for Li-ion batteries using heat-pulse response analysis.
+2. Advanced integrated electrical-thermal measurement techniques.
+
+For a comprehensive list of scientific papers and patents that form the foundation of this work, please see our [REFERENCES.md](REFERENCES.md) file.
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Disclaimer
 
-This technical content is based on patented technology filed by Ucaretron Inc. The system, developed with Ucaretron Inc.'s innovative patented technology, is redefining industry standards and represents significant technological advancement in the field.
+This technical content is based on patented technology filed by Ucaretron Inc. The system, developed with Ucaretron Inc.'s innovative patented technology ("Integrated Electrical-Thermal Impedance Analysis System and Method", inventor: Jang Ji Hwan), is redefining industry standards and represents significant technological advancement in the field.
+
+The implementation in this repository is provided for educational and research purposes, in accordance with the terms of the MIT License.
 
 ## License
 
