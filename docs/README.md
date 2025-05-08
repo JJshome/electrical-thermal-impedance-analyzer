@@ -1,51 +1,53 @@
 # Documentation
 
-This directory contains documentation for the Electrical-Thermal Impedance Analyzer system.
+This directory contains documentation for the Integrated Electrical-Thermal Impedance Analysis System.
 
 ## Contents
 
 - [System Overview](system_overview.md)
-- [Theory of Operation](theory.md)
 - [Hardware Documentation](hardware/README.md)
 - [Software Documentation](software/README.md)
-- [API Reference](api/README.md)
 - [Application Examples](examples/README.md)
-- [Patent Information](patents/README.md)
-
-## System Architecture
-
-The system consists of several integrated components:
-
-1. **Electrical Impedance Module (EIS)**: Measures electrical impedance spectra
-2. **Thermal Impedance Module (TIS)**: Measures thermal impedance spectra
-3. **Integrated Signal Processor**: Processes and correlates EIS and TIS data
-4. **AI-based Analysis Engine**: Extracts system characteristics from impedance data
-5. **Thermal Management System**: Maintains precise temperature control
-6. **Power Management Module**: Ensures efficient power delivery
-
-## Technical Specifications
-
-| Parameter | Specification | Notes |
-|-----------|---------------|-------|
-| Electrical Frequency Range | 0.1 Hz - 500 kHz | Logarithmic sweep |
-| Thermal Frequency Range | 0.01 Hz - 1 Hz | Logarithmic sweep |
-| Voltage Range | 1 mV - 1 V | Adjustable |
-| Current Range | 10 nA - 10 mA | Auto-ranging |
-| Temperature Control Range | 5°C - 80°C | ±0.1°C precision |
-| Temperature Measurement Resolution | 0.01°C | |
-| Impedance Measurement Range | 0.1 Ω - 10 MΩ | |
-| Impedance Accuracy | ±0.5% | |
-| Thermal Resistance Measurement Range | 0.1 K/W - 100 K/W | |
-| Data Acquisition Rate | Up to 1 MSps | Adjustable |
-| Communication Interfaces | USB, Bluetooth, Wi-Fi | |
-| Battery Life | 8+ hours | Rechargeable lithium-ion |
-| Dimensions | 200 mm × 150 mm × 50 mm | Main unit |
-| Weight | 950 g | Main unit |
+- [API Reference](api_reference.md)
 
 ## Getting Started
 
-For quick start information, see the [Getting Started Guide](getting_started.md).
+For a quick start guide to using the system, refer to the main [README.md](../README.md) file in the repository root.
 
-## Patent Information
+## Technical Details
 
-This technology is based on patented technology developed by Ucaretron Inc. For more information, see the [Patent Documentation](patents/README.md).
+The system combines electrical impedance spectroscopy (EIS) and thermal impedance spectroscopy (TIS) to provide comprehensive characterization of various systems including energy storage devices, semiconductor components, and biological tissues.
+
+### Electrical Impedance Spectroscopy (EIS)
+
+The EIS module measures the electrical impedance of a system across a wide frequency range (0.1Hz to 500kHz). Key components include:
+
+- Precision waveform generator
+- Low-noise current source
+- High-resolution voltage measurement
+- Phase-sensitive detection
+
+### Thermal Impedance Spectroscopy (TIS)
+
+The TIS module measures the thermal impedance of a system by applying controlled thermal stimuli and measuring the temperature response. Key components include:
+
+- Precision thermal stimulation (Peltier element)
+- High-resolution temperature sensing
+- Phase Change Material (PCM) thermal management
+- Adaptive thermal control
+
+### Integrated Signal Processing
+
+The system integrates electrical and thermal impedance data to provide a comprehensive characterization of the system under test:
+
+- Cross-domain correlation analysis
+- Feature extraction
+- Equivalent circuit modeling
+- AI-based pattern recognition
+
+## Advanced Topics
+
+- [Calibration Procedures](advanced/calibration.md)
+- [Custom Measurement Protocols](advanced/custom_protocols.md)
+- [Data Analysis Techniques](advanced/data_analysis.md)
+- [Machine Learning Models](advanced/ml_models.md)
