@@ -1,104 +1,90 @@
-# Hardware
+# Hardware Design
 
-This directory contains the hardware designs and documentation for the Electrical-Thermal Impedance Analyzer system.
+This directory contains hardware design files and documentation for the Integrated Electrical-Thermal Impedance Analysis System.
 
-## System Architecture
+## System Components
 
-The hardware of the Electrical-Thermal Impedance Analyzer is divided into several key modules:
+The hardware system consists of several key modules:
 
-1. **Main Control Board**
-   - FPGA-based processing unit
-   - ARM Cortex-M4F microcontroller
-   - Power management circuitry
-   - Communication interfaces
+### 1. Electrical Impedance Module (EIS)
 
-2. **Electrical Impedance Spectroscopy (EIS) Module**
-   - Signal generation circuit
-   - Current and voltage measurement
-   - Multi-frequency analysis circuitry
-   - Analog front-end components
+The EIS module is responsible for measuring electrical impedance spectra across a wide frequency range (0.1Hz to 500kHz). Key components include:
 
-3. **Thermal Impedance Spectroscopy (TIS) Module**
-   - Thermal stimulus generation
-   - Temperature sensing array
-   - Thermal diffusion measurement
-   - PCM-based temperature control
+- AD5940/ADuCM355 precision analog front-end
+- Waveform generation circuitry
+- Low-noise current source
+- High-resolution voltage measurement
+- Phase-sensitive detection circuitry
+- Analog filters and signal conditioning
 
-4. **Sensor Interface Board**
-   - Signal conditioning circuitry
-   - Multiplexing for multiple channels
-   - Calibration reference components
-   - Noise reduction mechanisms
+### 2. Thermal Impedance Module (TIS)
 
-## Specifications
+The TIS module measures thermal impedance by applying controlled thermal stimuli and measuring the temperature response. Key components include:
 
-| Component | Specification |
-|-----------|---------------|
-| FPGA | Xilinx Artix-7 |
-| Microcontroller | STM32F405 (ARM Cortex-M4F) |
-| ADC | 24-bit Sigma-Delta (ADS1256) |
-| DAC | 16-bit, 1MSPS (DAC8565) |
-| Temperature Sensors | 0.01°C resolution Pt100 RTDs |
-| Heating Element | Custom Peltier array |
-| Phase Change Material | Proprietary graphene-enhanced PCM |
-| Power Supply | Switched-mode power supply with multiple outputs |
-| Battery | Rechargeable lithium-ion, 3.7V, 2600mAh |
+- Peltier element driver circuitry
+- High-precision temperature sensors
+- Thermal interface materials
+- PCM (Phase Change Material) thermal management system
+- Thermal isolation structures
 
-## Circuit Designs
+### 3. Integrated Signal Processor
 
-The circuit designs are available in the following formats:
+The signal processor combines and processes data from both EIS and TIS modules. It includes:
 
-- Schematic diagrams (PDF)
-- PCB layouts (Gerber files)
-- Bill of Materials (BOM)
+- FPGA-based signal processing unit
+- High-speed data acquisition
+- Digital filtering and signal processing
+- Real-time analysis capabilities
+
+### 4. Power Management Module
+
+This module ensures efficient power delivery to all components of the system:
+
+- High-efficiency switching power supplies
+- Low-noise linear regulators
+- Battery management (for portable versions)
+- Power monitoring and protection circuits
+
+## PCB Designs
+
+The PCB design files will be provided in the following formats:
+
+- Altium Designer project files
+- Gerber files
+- BOM (Bill of Materials)
+- Assembly drawings
+
+## Enclosure Design
+
+CAD files for the system enclosure will be provided in:
+
+- STEP format
+- STL files for 3D printing
 - Assembly instructions
 
-## Mechanical Designs
+## Sensor Design
 
-Mechanical designs include:
+The integrated electrical-thermal impedance sensor features a layered design:
 
-- 3D models (STEP files)
-- Enclosure designs
-- Sensor mounting fixtures
-- Thermal management structures
+1. **Electrode Layer** - For electrical contact with the sample
+2. **Thermal Sensor Layer** - For precise temperature measurement
+3. **Peltier Element** - For controlled thermal stimulus
+4. **PCM Layer** - For thermal management
+5. **Insulation Layer** - To minimize external thermal influence
 
-## Manufacturing
+## Calibration Hardware
 
-Manufacturing files and instructions are provided for:
+Hardware components for system calibration include:
 
-- PCB fabrication
-- Component sourcing
-- Assembly guidelines
-- Testing procedures
+- Reference resistor and capacitor networks
+- Thermal reference materials
+- Calibration fixtures
 
-## Development and Prototyping
+## Future Hardware Development
 
-For development and prototyping purposes, a development kit is available that includes:
+Planned hardware improvements include:
 
-- Main control board
-- EIS/TIS expansion modules
-- Sensor interfaces
-- Programming adapters
-- Test fixtures
-
-## Safety Considerations
-
-The hardware design includes several safety features:
-
-- Overcurrent protection
-- Thermal shutdown
-- Isolation between high and low voltage sections
-- EMI/EMC compliance measures
-
-## Certifications
-
-The hardware has been designed to comply with the following standards:
-
-- CE marking
-- FCC Part 15 Class A
-- IEC 61010-1 (Safety requirements for electrical equipment)
-- ISO 13485 (Medical devices quality management)
-
-## License
-
-The hardware designs are released under the CERN Open Hardware License v2 - Permissive.
+- Miniaturized sensor designs for specific applications
+- Wireless communication capabilities
+- Extended frequency range capabilities
+- Enhanced thermal control systems
