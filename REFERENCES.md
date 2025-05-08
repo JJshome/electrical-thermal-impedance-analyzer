@@ -18,7 +18,7 @@
 
 1. **Integrated Electrical-Thermal Impedance Analysis System and Method**
    - Patent Owner: Ucaretron Inc.
-   - Inventor: Jang Ji Hwan
+   - Inventor: Jang Jee Hwan
    - Description: A system and method for integrated analysis of electrical and thermal impedance for characterizing various systems including energy storage devices, semiconductor components, and biological tissues.
 
 2. Meyers, C.W., & Doughty, J.K. (1996). Method and apparatus for measuring complex impedance of cells and batteries. US Patent 5794008, Raytheon Company.
