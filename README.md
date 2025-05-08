@@ -45,7 +45,7 @@ Where:
 
 Thermal impedance is a concept analogous to electrical impedance but applied to heat transfer. It describes how a material or system resists the flow of heat when subjected to a time-varying thermal stimulus.
 
-![Thermal Impedance Concept](docs/images/thermal_impedance_concept.svg)
+![Thermal Impedance Animated Concept](docs/images/thermal_impedance_animated.svg)
 
 Thermal impedance includes:
 
@@ -58,6 +58,8 @@ Thermal impedance is frequency-dependent and provides insights into:
 - Material thermal properties
 - Interface thermal behavior
 - Thermal management effectiveness
+
+![Thermal Impedance Concept](docs/images/thermal_impedance_concept.svg)
 
 ### Comparing Electrical and Thermal Impedance
 
