@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" version="1.1" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="data-grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+   <stop offset="0%" stop-color="#4a86e8" stop-opacity="1"/>
+   <stop offset="100%" stop-color="#1c4587" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="data-grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+   <stop offset="0%" stop-color="#e06666" stop-opacity="1"/>
+   <stop offset="100%" stop-color="#990000" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="data-grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+   <stop offset="0%" stop-color="#93c47d" stop-opacity="1"/>
+   <stop offset="100%" stop-color="#38761d" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="data-grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+   <stop offset="0%" stop-color="#f6b26b" stop-opacity="1"/>
+   <stop offset="100%" stop-color="#b45f06" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="data-grad5" x1="0%" y1="0%" x2="100%" y2="100%">
+   <stop offset="0%" stop-color="#8e7cc3" stop-opacity="1"/>
+   <stop offset="100%" stop-color="#674ea7" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="data-grad6" x1="0%" y1="0%" x2="100%" y2="100%">
+   <stop offset="0%" stop-color="#76a5af" stop-opacity="1"/>
+   <stop offset="100%" stop-color="#134f5c" stop-opacity="1"/>
+  </linearGradient>
+  <filter id="data-shadow" width="120%" height="120%">
+   <feDropShadow dx="3" dy="3" stdDeviation="3" flood-color="rgba(0,0,0,0.3)"/>
+  </filter>
+  
+  <!-- Electrical Signal Wave -->
+  <path id="electricalWave" d="M0,0 C10,-20 20,20 30,0 C40,-20 50,20 60,0" fill="none" stroke="#1c4587" stroke-width="2">
+  </path>
+  
+  <!-- Thermal Signal Wave -->
+  <path id="thermalWave" d="M0,0 C30,-15 60,15 90,0" fill="none" stroke="#990000" stroke-width="2">
+  </path>
+  
+  <!-- Data Packet -->
+  <symbol id="dataPacket" viewBox="0 0 20 20">
+   <rect x="0" y="0" width="20" height="20" rx="3" ry="3" fill="#4285f4" opacity="0.8"/>
+   <line x1="5" y1="5" x2="15" y2="5" stroke="white" stroke-width="1"/>
+   <line x1="5" y1="10" x2="15" y2="10" stroke="white" stroke-width="1"/>
+   <line x1="5" y1="15" x2="15" y2="15" stroke="white" stroke-width="1"/>
+  </symbol>
+ </defs>
+
+ <!-- Background -->
+ <rect x="0" y="0" width="800" height="600" fill="#f9f9f9"/>
+
+ <!-- Main Title -->
+ <text x="400" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">
+  Data Flow & Signal Processing
+  <animate attributeName="opacity" values="0;1" dur="1s" fill="freeze" />
+ </text>
+
+ <!-- Step 1: Input Data Acquisition -->
+ <g>
+  <rect x="100" y="100" width="160" height="80" rx="10" ry="10" fill="url(#data-grad1)" filter="url(#data-shadow)">
+   <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" />
+  </rect>
+  <text x="180" y="140" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+   Data Acquisition
+   <animate attributeName="opacity" values="0;1" dur="0.7s" fill="freeze" />
+  </text>
+  <text x="180" y="160" font-family="Arial" font-size="12" text-anchor="middle" fill="white">
+   Multi-frequency analysis
+   <animate attributeName="opacity" values="0;1" dur="0.9s" fill="freeze" />
+  </text>
+  
+  <!-- Electrical Signal Animation -->
+  <g transform="translate(110, 125)">
+   <use href="#electricalWave">
+    <animate attributeName="opacity" values="0;1" dur="1s" begin="0.6s" fill="freeze" />
+    <animate attributeName="transform" values="translate(0,0); translate(80,0)" dur="2s" begin="1.1s" repeatCount="indefinite" />
+   </use>
+  </g>
+ </g>
+
+ <!-- Step 2: Signal Conditioning -->
+ <g>
+  <rect x="320" y="100" width="160" height="80" rx="10" ry="10" fill="url(#data-grad2)" filter="url(#data-shadow)">
+   <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.5s" fill="freeze" />
+  </rect>
+  <text x="400" y="140" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+   Signal Conditioning
+   <animate attributeName="opacity" values="0;1" dur="0.7s" begin="0.7s" fill="freeze" />
+  </text>
+  <text x="400" y="160" font-family="Arial" font-size="12" text-anchor="middle" fill="white">
+   Filtering & Amplification
+   <animate attributeName="opacity" values="0;1" dur="0.9s" begin="0.9s" fill="freeze" />
+  </text>
+  
+  <!-- Signal Conditioning Animation -->
+  <g transform="translate(330, 125)">
+   <path d="M0,0 C5,-15 10,15 15,0 C20,-15 25,15 30,0 C35,-15 40,15 45,0 C50,-15 55,15 60,0" fill="none" stroke="white" stroke-width="1" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.2s" fill="freeze" />
+    <animate attributeName="stroke-width" values="1;2;1" dur="2s" begin="1.5s" repeatCount="indefinite" />
+   </path>
+   <path d="M0,0 C10,-10 20,10 30,0 C40,-10 50,10 60,0" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="3,3" opacity="0">
+    <animate attributeName="opacity" values="0;0.7" dur="0.5s" begin="1.4s" fill="freeze" />
+    <animate attributeName="stroke-dashoffset" values="60;0" dur="8s" begin="1.6s" repeatCount="indefinite" />
+   </path>
+  </g>
+ </g>
+
+ <!-- Step 3: FPGA Processing -->
+ <g>
+  <rect x="540" y="100" width="160" height="80" rx="10" ry="10" fill="url(#data-grad3)" filter="url(#data-shadow)">
+   <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.0s" fill="freeze" />
+  </rect>
+  <text x="620" y="130" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+   FPGA-based
+   <animate attributeName="opacity" values="0;1" dur="0.7s" begin="1.2s" fill="freeze" />
+  </text>
+  <text x="620" y="150" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+   Real-time Processing
+   <animate attributeName="opacity" values="0;1" dur="0.7s" begin="1.2s" fill="freeze" />
+  </text>
+  <text x="620" y="170" font-family="Arial" font-size="12" text-anchor="middle" fill="white">
+   Fast Fourier Transform
+   <animate attributeName="opacity" values="0;1" dur="0.9s" begin="1.4s" fill="freeze" />
+  </text>
+  
+  <!-- FPGA Animation -->
+  <g transform="translate(550, 125)">
+   <!-- Simplified FPGA grid -->
+   <rect x="0" y="0" width="40" height="30" fill="none" stroke="white" stroke-width="1" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.7s" fill="freeze" />
+   </rect>
+   <line x1="10" y1="0" x2="10" y2="30" stroke="white" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.8s" fill="freeze" />
+   </line>
+   <line x1="20" y1="0" x2="20" y2="30" stroke="white" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.9s" fill="freeze" />
+   </line>
+   <line x1="30" y1="0" x2="30" y2="30" stroke="white" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="2.0s" fill="freeze" />
+   </line>
+   <line x1="0" y1="10" x2="40" y2="10" stroke="white" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="2.1s" fill="freeze" />
+   </line>
+   <line x1="0" y1="20" x2="40" y2="20" stroke="white" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="2.2s" fill="freeze" />
+   </line>
+   
+   <!-- Processing lights -->
+   <circle cx="10" cy="10" r="2" fill="#ffcc00" opacity="0">
+    <animate attributeName="opacity" values="0;1;0" dur="0.5s" begin="2.3s" repeatCount="indefinite" />
+   </circle>
+   <circle cx="30" cy="10" r="2" fill="#ffcc00" opacity="0">
+    <animate attributeName="opacity" values="0;1;0" dur="0.7s" begin="2.4s" repeatCount="indefinite" />
+   </circle>
+   <circle cx="20" cy="20" r="2" fill="#ffcc00" opacity="0">
+    <animate attributeName="opacity" values="0;1;0" dur="0.6s" begin="2.5s" repeatCount="indefinite" />
+   </circle>
+  </g>
+ </g>
+
+ <!-- Connection Arrows 1-2 -->
+ <g>
+  <path d="M260,140 L320,140" stroke="#666" stroke-width="2" fill="none">
+   <animate attributeName="stroke-dashoffset" from="60" to="0" dur="0.5s" begin="1.0s" fill="freeze"/>
+   <animate attributeName="stroke-dasharray" values="4,2" dur="0.01s" begin="1.0s" fill="freeze"/>
+  </path>
+  <polygon points="320,140 310,135 310,145" fill="#666">
+   <animate attributeName="opacity" values="0;1" dur="0.2s" begin="1.5s" fill="freeze" />
+  </polygon>
+  
+  <!-- Data Packets Animation -->
+  <use href="#dataPacket" x="270" y="130" width="20" height="20" opacity="0">
+   <animate attributeName="opacity" values="0;1;0" dur="1.5s" begin="1.7s" repeatCount="indefinite" />
+   <animateMotion path="M0,0 L40,0" dur="1.5s" begin="1.7s" repeatCount="indefinite" />
+  </use>
+ </g>
+ 
+ <!-- Connection Arrows 2-3 -->
+ <g>
+  <path d="M480,140 L540,140" stroke="#666" stroke-width="2" fill="none">
+   <animate attributeName="stroke-dashoffset" from="60" to="0" dur="0.5s" begin="1.5s" fill="freeze"/>
+   <animate attributeName="stroke-dasharray" values="4,2" dur="0.01s" begin="1.5s" fill="freeze"/>
+  </path>
+  <polygon points="540,140 530,135 530,145" fill="#666">
+   <animate attributeName="opacity" values="0;1" dur="0.2s" begin="2.0s" fill="freeze" />
+  </polygon>
+  
+  <!-- Data Packets Animation -->
+  <use href="#dataPacket" x="490" y="130" width="20" height="20" opacity="0">
+   <animate attributeName="opacity" values="0;1;0" dur="1.5s" begin="2.2s" repeatCount="indefinite" />
+   <animateMotion path="M0,0 L40,0" dur="1.5s" begin="2.2s" repeatCount="indefinite" />
+  </use>
+ </g>
+
+ <!-- Step 4: Data Integration -->
+ <g>
+  <rect x="320" y="250" width="160" height="80" rx="10" ry="10" fill="url(#data-grad4)" filter="url(#data-shadow)">
+   <animate attributeName="opacity" values="0;1" dur="0.5s" begin="2.0s" fill="freeze" />
+  </rect>
+  <text x="400" y="280" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+   Data Integration
+   <animate attributeName="opacity" values="0;1" dur="0.7s" begin="2.2s" fill="freeze" />
+  </text>
+  <text x="400" y="300" font-family="Arial" font-size="12" text-anchor="middle" fill="white">
+   Electrical-Thermal Correlation
+   <animate attributeName="opacity" values="0;1" dur="0.9s" begin="2.4s" fill="freeze" />
+  </text>
+  
+  <!-- Data Integration Animation -->
+  <g transform="translate(330, 275)">
+   <!-- Electrical data (blue) -->
+   <path d="M0,0 C5,-10 10,10 15,0 C20,-10 25,10 30,0" fill="none" stroke="#4a86e8" stroke-width="1.5" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="2.6s" fill="freeze" />
+   </path>
+   <!-- Thermal data (red) -->
+   <path d="M0,15 C10,5 20,25 30,15" fill="none" stroke="#e06666" stroke-width="1.5" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="2.7s" fill="freeze" />
+   </path>
+   <!-- Correlation lines -->
+   <line x1="5" y1="-5" x2="5" y2="20" stroke="#76a5af" stroke-width="0.5" stroke-dasharray="2,2" opacity="0">
+    <animate attributeName="opacity" values="0;0.7" dur="0.3s" begin="2.8s" fill="freeze" />
+   </line>
+   <line x1="15" y1="0" x2="15" y2="20" stroke="#76a5af" stroke-width="0.5" stroke-dasharray="2,2" opacity="0">
+    <animate attributeName="opacity" values="0;0.7" dur="0.3s" begin="2.9s" fill="freeze" />
+   </line>
+   <line x1="25" y1="5" x2="25" y2="20" stroke="#76a5af" stroke-width="0.5" stroke-dasharray="2,2" opacity="0">
+    <animate attributeName="opacity" values="0;0.7" dur="0.3s" begin="3.0s" fill="freeze" />
+   </line>
+  </g>
+ </g>
+
+ <!-- Connection Arrows 3-4 -->
+ <g>
+  <path d="M620,180 L620,220 L400,220 L400,250" stroke="#666" stroke-width="2" fill="none">
+   <animate attributeName="stroke-dashoffset" from="300" to="0" dur="1.2s" begin="2.5s" fill="freeze"/>
+   <animate attributeName="stroke-dasharray" values="4,2" dur="0.01s" begin="2.5s" fill="freeze"/>
+  </path>
+  <polygon points="400,250 395,240 405,240" fill="#666">
+   <animate attributeName="opacity" values="0;1" dur="0.2s" begin="3.7s" fill="freeze" />
+  </polygon>
+  
+  <!-- Data Packets Animation -->
+  <use href="#dataPacket" x="620" y="190" width="20" height="20" opacity="0">
+   <animate attributeName="opacity" values="0;1;0" dur="2s" begin="3.0s" repeatCount="indefinite" />
+   <animateMotion path="M0,0 L0,30 L-220,30 L-220,60" dur="2s" begin="3.0s" repeatCount="indefinite" />
+  </use>
+ </g>
+
+ <!-- Connection Arrows 1-4 -->
+ <g>
+  <path d="M180,180 L180,220 L320,220" stroke="#666" stroke-width="2" fill="none">
+   <animate attributeName="stroke-dashoffset" from="200" to="0" dur="0.8s" begin="3.0s" fill="freeze"/>
+   <animate attributeName="stroke-dasharray" values="4,2" dur="0.01s" begin="3.0s" fill="freeze"/>
+  </path>
+  
+  <!-- Data Packets Animation -->
+  <use href="#dataPacket" x="180" y="190" width="20" height="20" opacity="0">
+   <animate attributeName="opacity" values="0;1;0" dur="1.5s" begin="3.5s" repeatCount="indefinite" />
+   <animateMotion path="M0,0 L0,30 L140,30" dur="1.5s" begin="3.5s" repeatCount="indefinite" />
+  </use>
+ </g>
+
+ <!-- Step 5: AI Analysis -->
+ <g>
+  <rect x="320" y="400" width="160" height="80" rx="10" ry="10" fill="url(#data-grad5)" filter="url(#data-shadow)">
+   <animate attributeName="opacity" values="0;1" dur="0.5s" begin="3.5s" fill="freeze" />
+  </rect>
+  <text x="400" y="430" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+   AI-Based Analysis
+   <animate attributeName="opacity" values="0;1" dur="0.7s" begin="3.7s" fill="freeze" />
+  </text>
+  <text x="400" y="450" font-family="Arial" font-size="12" text-anchor="middle" fill="white">
+   Deep Learning Models
+   <animate attributeName="opacity" values="0;1" dur="0.9s" begin="3.9s" fill="freeze" />
+  </text>
+  
+  <!-- Neural Network Animation -->
+  <g transform="translate(330, 415)">
+   <!-- Input Layer -->
+   <circle cx="10" cy="10" r="3" fill="white" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="4.1s" fill="freeze" />
+    <animate attributeName="r" values="3;4;3" dur="2s" begin="4.6s" repeatCount="indefinite" />
+   </circle>
+   <circle cx="10" cy="20" r="3" fill="white" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="4.15s" fill="freeze" />
+    <animate attributeName="r" values="3;4;3" dur="2s" begin="4.65s" repeatCount="indefinite" />
+   </circle>
+   <circle cx="10" cy="30" r="3" fill="white" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="4.2s" fill="freeze" />
+    <animate attributeName="r" values="3;4;3" dur="2s" begin="4.7s" repeatCount="indefinite" />
+   </circle>
+   
+   <!-- Hidden Layer -->
+   <circle cx="40" cy="10" r="3" fill="white" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="4.25s" fill="freeze" />
+    <animate attributeName="r" values="3;4;3" dur="2s" begin="4.75s" repeatCount="indefinite" />
+   </circle>
+   <circle cx="40" cy="20" r="3" fill="white" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="4.3s" fill="freeze" />
+    <animate attributeName="r" values="3;4;3" dur="2s" begin="4.8s" repeatCount="indefinite" />
+   </circle>
+   <circle cx="40" cy="30" r="3" fill="white" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="4.35s" fill="freeze" />
+    <animate attributeName="r" values="3;4;3" dur="2s" begin="4.85s" repeatCount="indefinite" />
+   </circle>
+   
+   <!-- Output Layer -->
+   <circle cx="70" cy="15" r="3" fill="white" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="4.4s" fill="freeze" />
+    <animate attributeName="r" values="3;4;3" dur="2s" begin="4.9s" repeatCount="indefinite" />
+   </circle>
+   <circle cx="70" cy="25" r="3" fill="white" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="4.45s" fill="freeze" />
+    <animate attributeName="r" values="3;4;3" dur="2s" begin="4.95s" repeatCount="indefinite" />
+   </circle>
+   
+   <!-- Connections -->
+   <!-- Input to Hidden -->
+   <line x1="10" y1="10" x2="40" y2="10" stroke="white" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" values="0;0.6" dur="0.2s" begin="4.5s" fill="freeze" />
+   </line>
+   <line x1="10" y1="10" x2="40" y2="20" stroke="white" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" values="0;0.6" dur="0.2s" begin="4.52s" fill="freeze" />
+   </line>
+   <line x1="10" y1="10" x2="40" y2="30" stroke="white" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" values="0;0.6" dur="0.2s" begin="4.54s" fill="freeze" />
+   </line>
+   
+   <line x1="10" y1="20" x2="40" y2="10" stroke="white" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" values="0;0.6" dur="0.2s" begin="4.56s" fill="freeze" />
+   </line>
+   <line x1="10" y1="20" x2="40" y2="20" stroke="white" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" values="0;0.6" dur="0.2s" begin="4.58s" fill="freeze" />
+   </line>
+   <line x1="10" y1="20" x2="40" y2="30" stroke="white" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" values="0;0.6" dur="0.2s" begin="4.6s" fill="freeze" />
+   </line>
+   
+   <line x1="10" y1="30" x2="40" y2="10" stroke="white" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" values="0;0.6" dur="0.2s" begin="4.62s" fill="freeze" />
+   </line>
+   <line x1="10" y1="30" x2="40" y2="20" stroke="white" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" values="0;0.6" dur="0.2s" begin="4.64s" fill="freeze" />
+   </line>
+   <line x1="10" y1="30" x2="40" y2="30" stroke="white" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" values="0;0.6" dur="0.2s" begin="4.66s" fill="freeze" />
+   </line>
+   
+   <!-- Hidden to Output -->
+   <line x1="40" y1="10" x2="70" y2="15" stroke="white" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" values="0;0.6" dur="0.2s" begin="4.68s" fill="freeze" />
+   </line>
+   <line x1="40" y1="10" x2="70" y2="25" stroke="white" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" values="0;0.6" dur="0.2s" begin="4.7s" fill="freeze" />
+   </line>
+   
+   <line x1="40" y1="20" x2="70" y2="15" stroke="white" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" values="0;0.6" dur="0.2s" begin="4.72s" fill="freeze" />
+   </line>
+   <line x1="40" y1="20" x2="70" y2="25" stroke="white" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" values="0;0.6" dur="0.2s" begin="4.74s" fill="freeze" />
+   </line>
+   
+   <line x1="40" y1="30" x2="70" y2="15" stroke="white" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" values="0;0.6" dur="0.2s" begin="4.76s" fill="freeze" />
+   </line>
+   <line x1="40" y1="30" x2="70" y2="25" stroke="white" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" values="0;0.6" dur="0.2s" begin="4.78s" fill="freeze" />
+   </line>
+   
+   <!-- Data flow pulses -->
+   <circle cx="15" cy="15" r="2" fill="#ffcc00" opacity="0">
+    <animate attributeName="opacity" values="0;1;0" dur="1s" begin="5s" repeatCount="indefinite" />
+    <animate attributeName="cx" values="10;70" dur="1s" begin="5s" repeatCount="indefinite" />
+   </circle>
+  </g>
+ </g>
+
+ <!-- Connection Arrows 4-5 -->
+ <g>
+  <path d="M400,330 L400,400" stroke="#666" stroke-width="2" fill="none">
+   <animate attributeName="stroke-dashoffset" from="70" to="0" dur="0.5s" begin="4.0s" fill="freeze"/>
+   <animate attributeName="stroke-dasharray" values="4,2" dur="0.01s" begin="4.0s" fill="freeze"/>
+  </path>
+  <polygon points="400,400 395,390 405,390" fill="#666">
+   <animate attributeName="opacity" values="0;1" dur="0.2s" begin="4.5s" fill="freeze" />
+  </polygon>
+  
+  <!-- Data Packets Animation -->
+  <use href="#dataPacket" x="390" y="345" width="20" height="20" opacity="0">
+   <animate attributeName="opacity" values="0;1;0" dur="1.2s" begin="4.2s" repeatCount="indefinite" />
+   <animateMotion path="M0,0 L0,40" dur="1.2s" begin="4.2s" repeatCount="indefinite" />
+  </use>
+ </g>
+
+ <!-- Step 6: Results Visualization -->
+ <g>
+  <rect x="120" y="400" width="160" height="80" rx="10" ry="10" fill="url(#data-grad6)" filter="url(#data-shadow)">
+   <animate attributeName="opacity" values="0;1" dur="0.5s" begin="4.5s" fill="freeze" />
+  </rect>
+  <text x="200" y="430" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+   Results Visualization
+   <animate attributeName="opacity" values="0;1" dur="0.7s" begin="4.7s" fill="freeze" />
+  </text>
+  <text x="200" y="450" font-family="Arial" font-size="12" text-anchor="middle" fill="white">
+   Interactive Dashboards
+   <animate attributeName="opacity" values="0;1" dur="0.9s" begin="4.9s" fill="freeze" />
+  </text>
+  
+  <!-- Visualization Animation -->
+  <g transform="translate(135, 415)">
+   <!-- Stylized Chart -->
+   <rect x="0" y="0" width="50" height="30" fill="#134f5c" stroke="white" stroke-width="1" opacity="0">
+    <animate attributeName="opacity" values="0;0.8" dur="0.5s" begin="5.1s" fill="freeze" />
+   </rect>
+   
+   <!-- Chart Bars -->
+   <rect x="5" y="25" width="5" height="-5" fill="#4a86e8" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.2s" begin="5.2s" fill="freeze" />
+    <animate attributeName="height" values="-5;-10;-8" dur="4s" begin="5.3s" repeatCount="indefinite" />
+   </rect>
+   <rect x="15" y="25" width="5" height="-15" fill="#4a86e8" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.2s" begin="5.3s" fill="freeze" />
+    <animate attributeName="height" values="-15;-18;-12;-15" dur="4s" begin="5.4s" repeatCount="indefinite" />
+   </rect>
+   <rect x="25" y="25" width="5" height="-10" fill="#4a86e8" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.2s" begin="5.4s" fill="freeze" />
+    <animate attributeName="height" values="-10;-8;-12;-10" dur="4s" begin="5.5s" repeatCount="indefinite" />
+   </rect>
+   <rect x="35" y="25" width="5" height="-20" fill="#4a86e8" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.2s" begin="5.5s" fill="freeze" />
+    <animate attributeName="height" values="-20;-25;-20" dur="4s" begin="5.6s" repeatCount="indefinite" />
+   </rect>
+   
+   <!-- Chart Lines -->
+   <polyline points="7,10 17,15 27,8 37,5" fill="none" stroke="#e06666" stroke-width="1" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="5.6s" fill="freeze" />
+    <animate attributeName="points" values="7,10 17,15 27,8 37,5;7,12 17,13 27,10 37,8;7,10 17,15 27,8 37,5" dur="5s" begin="5.7s" repeatCount="indefinite" />
+   </polyline>
+   
+   <!-- Chart Points -->
+   <circle cx="7" cy="10" r="1.5" fill="#e06666" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="5.8s" fill="freeze" />
+    <animate attributeName="cy" values="10;12;10" dur="5s" begin="5.9s" repeatCount="indefinite" />
+   </circle>
+   <circle cx="17" cy="15" r="1.5" fill="#e06666" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="5.9s" fill="freeze" />
+    <animate attributeName="cy" values="15;13;15" dur="5s" begin="6.0s" repeatCount="indefinite" />
+   </circle>
+   <circle cx="27" cy="8" r="1.5" fill="#e06666" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="6.0s" fill="freeze" />
+    <animate attributeName="cy" values="8;10;8" dur="5s" begin="6.1s" repeatCount="indefinite" />
+   </circle>
+   <circle cx="37" cy="5" r="1.5" fill="#e06666" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="6.1s" fill="freeze" />
+    <animate attributeName="cy" values="5;8;5" dur="5s" begin="6.2s" repeatCount="indefinite" />
+   </circle>
+  </g>
+ </g>
+
+ <!-- Step 7: System Characteristics Output -->
+ <g>
+  <rect x="520" y="400" width="160" height="80" rx="10" ry="10" fill="url(#data-grad1)" filter="url(#data-shadow)">
+   <animate attributeName="opacity" values="0;1" dur="0.5s" begin="5.0s" fill="freeze" />
+  </rect>
+  <text x="600" y="430" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+   System Characteristics
+   <animate attributeName="opacity" values="0;1" dur="0.7s" begin="5.2s" fill="freeze" />
+  </text>
+  <text x="600" y="450" font-family="Arial" font-size="12" text-anchor="middle" fill="white">
+   Parameter Extraction
+   <animate attributeName="opacity" values="0;1" dur="0.9s" begin="5.4s" fill="freeze" />
+  </text>
+  
+  <!-- Characteristics Animation -->
+  <g transform="translate(550, 430)">
+   <text x="0" y="0" font-family="Courier New" font-size="6" fill="white" opacity="0">
+    SOC: 85.2%
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="6.0s" fill="freeze" />
+   </text>
+   <text x="0" y="10" font-family="Courier New" font-size="6" fill="white" opacity="0">
+    SOH: 92.7%
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="6.2s" fill="freeze" />
+   </text>
+   <text x="0" y="20" font-family="Courier New" font-size="6" fill="white" opacity="0">
+    R_int: 25.4mΩ
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="6.4s" fill="freeze" />
+   </text>
+   <text x="40" y="0" font-family="Courier New" font-size="6" fill="white" opacity="0">
+    Rth: 2.8K/W
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="6.6s" fill="freeze" />
+   </text>
+   <text x="40" y="10" font-family="Courier New" font-size="6" fill="white" opacity="0">
+    Cth: 145J/K
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="6.8s" fill="freeze" />
+   </text>
+   <text x="40" y="20" font-family="Courier New" font-size="6" fill="white" opacity="0">
+    Reliability: 99.3%
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="7.0s" fill="freeze" />
+   </text>
+  </g>
+ </g>
+
+ <!-- Connection Arrows 5-6 -->
+ <g>
+  <path d="M320,440 L280,440" stroke="#666" stroke-width="2" fill="none">
+   <animate attributeName="stroke-dashoffset" from="40" to="0" dur="0.3s" begin="5.5s" fill="freeze"/>
+   <animate attributeName="stroke-dasharray" values="4,2" dur="0.01s" begin="5.5s" fill="freeze"/>
+  </path>
+  <polygon points="280,440 290,435 290,445" fill="#666">
+   <animate attributeName="opacity" values="0;1" dur="0.2s" begin="5.8s" fill="freeze" />
+  </polygon>
+ </g>
+
+ <!-- Connection Arrows 5-7 -->
+ <g>
+  <path d="M480,440 L520,440" stroke="#666" stroke-width="2" fill="none">
+   <animate attributeName="stroke-dashoffset" from="40" to="0" dur="0.3s" begin="5.5s" fill="freeze"/>
+   <animate attributeName="stroke-dasharray" values="4,2" dur="0.01s" begin="5.5s" fill="freeze"/>
+  </path>
+  <polygon points="520,440 510,435 510,445" fill="#666">
+   <animate attributeName="opacity" values="0;1" dur="0.2s" begin="5.8s" fill="freeze" />
+  </polygon>
+ </g>
+
+ <!-- User Interface -->
+ <g>
+  <rect x="320" y="530" width="160" height="50" rx="25" ry="25" fill="#f2f2f2" stroke="#d9d9d9" stroke-width="2" filter="url(#data-shadow)">
+   <animate attributeName="opacity" values="0;1" dur="0.5s" begin="7.0s" fill="freeze" />
+  </rect>
+  <text x="400" y="560" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">
+   User Interface
+   <animate attributeName="opacity" values="0;1" dur="0.7s" begin="7.2s" fill="freeze" />
+  </text>
+ </g>
+
+ <!-- Final Connections to UI -->
+ <g>
+  <path d="M200,480 L200,515 L320,555" stroke="#666" stroke-width="2" fill="none">
+   <animate attributeName="stroke-dashoffset" from="150" to="0" dur="0.6s" begin="7.5s" fill="freeze"/>
+   <animate attributeName="stroke-dasharray" values="4,2" dur="0.01s" begin="7.5s" fill="freeze"/>
+  </path>
+  <polygon points="320,555 308,547 312,559" fill="#666">
+   <animate attributeName="opacity" values="0;1" dur="0.2s" begin="8.1s" fill="freeze" />
+  </polygon>
+ </g>
+
+ <g>
+  <path d="M600,480 L600,515 L480,555" stroke="#666" stroke-width="2" fill="none">
+   <animate attributeName="stroke-dashoffset" from="150" to="0" dur="0.6s" begin="7.7s" fill="freeze"/>
+   <animate attributeName="stroke-dasharray" values="4,2" dur="0.01s" begin="7.7s" fill="freeze"/>
+  </path>
+  <polygon points="480,555 492,547 488,559" fill="#666">
+   <animate attributeName="opacity" values="0;1" dur="0.2s" begin="8.3s" fill="freeze" />
+  </polygon>
+ </g>
+
+ <!-- Final Timeline Indicator -->
+ <g>
+  <rect x="0" y="580" width="800" height="20" fill="#f2f2f2" stroke="none" opacity="0">
+   <animate attributeName="opacity" values="0;1" dur="0.5s" begin="8.5s" fill="freeze" />
+  </rect>
+  <rect x="0" y="580" width="0" height="20" fill="#4a86e8" stroke="none" opacity="0">
+   <animate attributeName="opacity" values="0;1" dur="0.5s" begin="8.5s" fill="freeze" />
+   <animate attributeName="width" values="0;800" dur="1s" begin="8.5s" fill="freeze" />
+  </rect>
+  <text x="400" y="595" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="white" opacity="0">
+   Process Complete
+   <animate attributeName="opacity" values="0;1" dur="0.5s" begin="9.5s" fill="freeze" />
+  </text>
+ </g>
+</svg>
