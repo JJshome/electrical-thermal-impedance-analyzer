@@ -8,7 +8,7 @@
 
 This repository contains an implementation of an advanced integrated electrical-thermal impedance analysis system. The system combines electrical impedance spectroscopy (EIS) and thermal impedance spectroscopy (TIS) techniques to provide comprehensive characterization of various systems including energy storage devices, semiconductor components, and biological tissues.
 
-![Integrated Impedance System](docs/images/integrated_impedance_system.svg)
+![System Architecture](docs/images/system_architecture.svg)
 
 ## Key Features
 
@@ -41,11 +41,13 @@ Where:
 - X is the reactance (Ohms, Ω)
 - j is the imaginary unit (√-1)
 
+![Electrical Impedance Circuit](docs/images/electrical_impedance_circuit.svg)
+
 ### What is Thermal Impedance?
 
 Thermal impedance is a concept analogous to electrical impedance but applied to heat transfer. It describes how a material or system resists the flow of heat when subjected to a time-varying thermal stimulus.
 
-![Thermal Impedance Animated Concept](docs/images/thermal_impedance_animated.svg)
+![Thermal Impedance System](docs/images/thermal_stimulus_system.svg)
 
 Thermal impedance includes:
 
@@ -61,17 +63,13 @@ Thermal impedance is frequency-dependent and provides insights into:
 
 For a more detailed explanation of thermal impedance, see our [thermal impedance documentation](docs/thermal_impedance/README.md).
 
-![Thermal Impedance Concept](docs/images/thermal_impedance_concept.svg)
-
 ### Comparing Electrical and Thermal Impedance
 
-![Electrical vs Thermal Impedance](docs/images/electrical_vs_thermal_impedance.svg)
+Both electrical and thermal impedance analyses provide complementary information about the system under test. When combined, they offer a comprehensive view of the system's behavior under various conditions.
 
 ### Thermal Impedance Spectroscopy (TIS)
 
 Thermal Impedance Spectroscopy involves measuring thermal impedance across a range of frequencies to characterize a system's thermal response.
-
-![Thermal Impedance Spectroscopy](docs/images/thermal_impedance_spectroscopy.svg)
 
 Key aspects of TIS:
 1. Apply periodic thermal stimuli at different frequencies
@@ -99,6 +97,8 @@ This technology has applications in multiple domains:
 - Performance optimization
 - Thermal runaway detection
 
+![Battery Monitoring](docs/images/battery_monitoring.svg)
+
 ### Biomedical
 - Non-invasive glucose monitoring
 - Tissue characterization
@@ -116,13 +116,9 @@ This technology has applications in multiple domains:
 - Aging and degradation studies
 - Structure-property relationships
 
-![Application Areas](docs/images/applications.svg)
-
 ## System Architecture
 
 The system consists of several integrated components:
-
-![System Architecture](docs/images/system_architecture.svg)
 
 - **Electrical Impedance Module (EIS)**: Measures electrical impedance spectra
 - **Thermal Impedance Module (TIS)**: Measures thermal impedance spectra
@@ -131,9 +127,17 @@ The system consists of several integrated components:
 - **Thermal Management System**: Maintains precise temperature control
 - **Power Management Module**: Ensures efficient power delivery
 
-## Data Flow
+## Integrated Sensor Module
 
-![Data Flow](docs/images/data_flow.svg)
+The key innovation in our system is the integrated electrical-thermal impedance sensor module, which enables simultaneous measurement of both impedance types.
+
+![Integrated Sensor Module](docs/images/integrated_sensor_module.svg)
+
+## Deep Learning Analysis
+
+Our system employs advanced deep learning models to analyze impedance patterns and extract meaningful system characteristics.
+
+![Deep Learning Model](docs/images/deep_learning_model.svg)
 
 ## Repository Structure
 
@@ -291,7 +295,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Disclaimer
 
-This technical content is based on patented technology filed by Ucaretron Inc. The system, developed with Ucaretron Inc.'s innovative patented technology ("Integrated Electrical-Thermal Impedance Analysis System and Method", inventor: Jang Ji Hwan), is redefining industry standards and represents significant technological advancement in the field.
+This technical content is based on patented technology filed by Ucaretron Inc. The system, developed with Ucaretron Inc.'s innovative patented technology ("Integrated Electrical-Thermal Impedance Analysis System and Method", inventor: Jang Jee Hwan), is redefining industry standards and represents significant technological advancement in the field.
 
 The implementation in this repository is provided for educational and research purposes, in accordance with the terms of the MIT License.
 
