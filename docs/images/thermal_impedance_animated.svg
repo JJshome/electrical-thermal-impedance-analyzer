@@ -1,0 +1,207 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 500">
+    <defs>
+        <linearGradient id="heatGradient" x1="0%" y1="0%" x2="100%" y1="0%">
+            <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#9b59b6;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#e74c3c;stop-opacity:1" />
+        </linearGradient>
+        
+        <linearGradient id="materialGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#ecf0f1;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#bdc3c7;stop-opacity:1" />
+        </linearGradient>
+        
+        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="5" result="blur" />
+            <feFlood flood-color="#e74c3c" flood-opacity="0.6" result="coloredBlur" />
+            <feComposite in="coloredBlur" in2="blur" operator="in" result="coloredBlur" />
+            <feBlend in="SourceGraphic" in2="coloredBlur" mode="normal" />
+        </filter>
+        
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+            <feOffset dx="2" dy="2" result="offsetblur" />
+            <feComponentTransfer>
+                <feFuncA type="linear" slope="0.5"/>
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        
+        <!-- Animation patterns -->
+        <pattern id="heatPattern" patternUnits="userSpaceOnUse" width="40" height="40" patternTransform="rotate(45)">
+            <rect width="40" height="40" fill="url(#heatGradient)">
+                <animate attributeName="opacity" 
+                         values="0.1;0.4;0.1" 
+                         dur="3s" 
+                         repeatCount="indefinite" />
+            </rect>
+        </pattern>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="800" height="500" fill="#f5f5f5" rx="10" ry="10" />
+    
+    <!-- Title -->
+    <text x="400" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold" fill="#2c3e50">Thermal Impedance Concept</text>
+    <text x="400" y="70" font-family="Arial" font-size="16" text-anchor="middle" font-style="italic" fill="#7f8c8d">Dynamic Heat Flow through Materials</text>
+    
+    <!-- Main Material Block -->
+    <rect id="material" x="200" y="130" width="400" height="200" rx="5" ry="5" fill="url(#materialGradient)" stroke="#7f8c8d" stroke-width="2" />
+    
+    <!-- Material Layers -->
+    <g id="thermalComponents">
+        <!-- Thermal Resistance Layer -->
+        <rect x="200" y="130" width="400" height="50" fill="#3498db" fill-opacity="0.2" stroke="#2980b9" stroke-width="1">
+            <title>Thermal Resistance</title>
+        </rect>
+        <text x="400" y="160" font-family="Arial" font-size="14" text-anchor="middle" fill="#2c3e50">Thermal Resistance (R)</text>
+        
+        <!-- Thermal Interface Layer -->
+        <rect x="200" y="180" width="400" height="30" fill="#e74c3c" fill-opacity="0.2" stroke="#c0392b" stroke-width="1">
+            <title>Thermal Interface</title>
+        </rect>
+        <text x="400" y="200" font-family="Arial" font-size="14" text-anchor="middle" fill="#2c3e50">Thermal Interface</text>
+        
+        <!-- Thermal Capacitance Layer -->
+        <rect x="200" y="210" width="400" height="70" fill="#9b59b6" fill-opacity="0.2" stroke="#8e44ad" stroke-width="1">
+            <title>Thermal Capacitance</title>
+        </rect>
+        <text x="400" y="250" font-family="Arial" font-size="14" text-anchor="middle" fill="#2c3e50">Thermal Capacitance (C)</text>
+        
+        <!-- Thermal Mass Layer -->
+        <rect x="200" y="280" width="400" height="50" fill="#2ecc71" fill-opacity="0.2" stroke="#27ae60" stroke-width="1">
+            <title>Thermal Mass</title>
+        </rect>
+        <text x="400" y="310" font-family="Arial" font-size="14" text-anchor="middle" fill="#2c3e50">Thermal Mass</text>
+    </g>
+    
+    <!-- Heat Source (Left) -->
+    <circle id="heatSource" cx="100" cy="230" r="30" fill="url(#heatPattern)" stroke="#e74c3c" stroke-width="2" filter="url(#glow)">
+        <animate attributeName="r" 
+                 values="30;35;30" 
+                 dur="2s" 
+                 repeatCount="indefinite" />
+    </circle>
+    <text x="100" y="235" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold" fill="white">Heat</text>
+    
+    <!-- Heat Sink (Right) -->
+    <g id="heatSink">
+        <rect x="650" y="180" width="20" height="100" fill="#7f8c8d" />
+        <rect x="670" y="180" width="20" height="100" fill="#7f8c8d" />
+        <rect x="690" y="180" width="20" height="100" fill="#7f8c8d" />
+        <rect x="710" y="180" width="20" height="100" fill="#7f8c8d" />
+    </g>
+    <text x="685" y="310" font-family="Arial" font-size="14" text-anchor="middle" fill="#2c3e50">Heat Sink</text>
+    
+    <!-- Heat Flow Animation -->
+    <g id="heatFlow">
+        <!-- Heat Pulses -->
+        <circle class="heatPulse" cx="150" cy="230" r="8" fill="#e74c3c" opacity="0.7">
+            <animate attributeName="cx" 
+                     values="150;600" 
+                     dur="4s" 
+                     begin="0s"
+                     repeatCount="indefinite" />
+            <animate attributeName="opacity" 
+                     values="0.7;0.5;0.3;0.1;0" 
+                     dur="4s" 
+                     begin="0s"
+                     repeatCount="indefinite" />
+        </circle>
+        <circle class="heatPulse" cx="150" cy="230" r="8" fill="#e74c3c" opacity="0.7">
+            <animate attributeName="cx" 
+                     values="150;600" 
+                     dur="4s" 
+                     begin="1s"
+                     repeatCount="indefinite" />
+            <animate attributeName="opacity" 
+                     values="0.7;0.5;0.3;0.1;0" 
+                     dur="4s" 
+                     begin="1s"
+                     repeatCount="indefinite" />
+        </circle>
+        <circle class="heatPulse" cx="150" cy="230" r="8" fill="#e74c3c" opacity="0.7">
+            <animate attributeName="cx" 
+                     values="150;600" 
+                     dur="4s" 
+                     begin="2s"
+                     repeatCount="indefinite" />
+            <animate attributeName="opacity" 
+                     values="0.7;0.5;0.3;0.1;0" 
+                     dur="4s" 
+                     begin="2s"
+                     repeatCount="indefinite" />
+        </circle>
+        <circle class="heatPulse" cx="150" cy="230" r="8" fill="#e74c3c" opacity="0.7">
+            <animate attributeName="cx" 
+                     values="150;600" 
+                     dur="4s" 
+                     begin="3s"
+                     repeatCount="indefinite" />
+            <animate attributeName="opacity" 
+                     values="0.7;0.5;0.3;0.1;0" 
+                     dur="4s" 
+                     begin="3s"
+                     repeatCount="indefinite" />
+        </circle>
+    </g>
+    
+    <!-- Sinusoidal Heat Input -->
+    <g id="heatInput" transform="translate(100,370)">
+        <rect x="-50" y="-20" width="100" height="100" fill="white" stroke="#bdc3c7" stroke-width="1" rx="5" ry="5" />
+        <text x="0" y="-5" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">Heat Input</text>
+        
+        <path d="M -40,40 
+                 Q -30,10 -20,40 
+                 Q -10,70 0,40 
+                 Q 10,10 20,40 
+                 Q 30,70 40,40" 
+              fill="none" stroke="#e74c3c" stroke-width="2" />
+              
+        <!-- Animated Dot Following Sine Wave -->
+        <circle cx="-40" cy="40" r="4" fill="#e74c3c">
+            <animate attributeName="cx" values="-40;-20;0;20;40" dur="2s" repeatCount="indefinite" />
+            <animate attributeName="cy" values="40;10;40;70;40" dur="2s" repeatCount="indefinite" />
+        </circle>
+    </g>
+    
+    <!-- Phase-Shifted Temperature Response -->
+    <g id="tempResponse" transform="translate(700,370)">
+        <rect x="-50" y="-20" width="100" height="100" fill="white" stroke="#bdc3c7" stroke-width="1" rx="5" ry="5" />
+        <text x="0" y="-5" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">Temperature Response</text>
+        
+        <!-- Phase-shifted sine wave -->
+        <path d="M -40,55 
+                 Q -30,25 -20,55 
+                 Q -10,85 0,55 
+                 Q 10,25 20,55 
+                 Q 30,85 40,55" 
+              fill="none" stroke="#3498db" stroke-width="2" />
+        
+        <!-- Animated Dot Following Sine Wave with Phase Shift -->
+        <circle cx="-40" cy="55" r="4" fill="#3498db">
+            <animate attributeName="cx" values="-40;-20;0;20;40" dur="2s" repeatCount="indefinite" />
+            <animate attributeName="cy" values="55;25;55;85;55" dur="2s" repeatCount="indefinite" />
+        </circle>
+    </g>
+    
+    <!-- Connecting Arrows -->
+    <line x1="130" y1="230" x2="190" y2="230" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,3" />
+    <polygon points="190,230 180,225 180,235" fill="#e74c3c" />
+    
+    <line x1="600" y1="230" x2="640" y2="230" stroke="#3498db" stroke-width="2" stroke-dasharray="5,3" />
+    <polygon points="640,230 630,225 630,235" fill="#3498db" />
+    
+    <!-- Formula -->
+    <rect x="300" y="420" width="200" height="60" rx="10" ry="10" fill="#f1c40f" fill-opacity="0.2" stroke="#f39c12" stroke-width="1" filter="url(#shadow)" />
+    <text x="400" y="445" font-family="Arial" font-size="18" text-anchor="middle" font-style="italic" font-weight="bold" fill="#2c3e50">Z(ω) = R + j(ωM - 1/ωC)</text>
+    <text x="400" y="465" font-family="Arial" font-size="12" text-anchor="middle" fill="#7f8c8d">Thermal Impedance Formula</text>
+    
+    <!-- Flow Lines -->
+    <path d="M 150,350 L 150,390 L 60,390" fill="none" stroke="#7f8c8d" stroke-width="1" stroke-dasharray="3,2" />
+    <path d="M 650,350 L 650,390 L 740,390" fill="none" stroke="#7f8c8d" stroke-width="1" stroke-dasharray="3,2" />
+</svg>
