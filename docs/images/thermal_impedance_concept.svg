@@ -1,87 +1,120 @@
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 450">
-    <defs>
-        <linearGradient id="heatGradient" x1="0%" y1="0%" x2="100%" y1="0%">
-            <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
-            <stop offset="50%" style="stop-color:#9b59b6;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#e74c3c;stop-opacity:1" />
-        </linearGradient>
-        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
-            <feOffset dx="2" dy="2" result="offsetblur" />
-            <feComponentTransfer>
-                <feFuncA type="linear" slope="0.5"/>
-            </feComponentTransfer>
-            <feMerge>
-                <feMergeNode/>
-                <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-        </filter>
-    </defs>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="hotToCold" x1="0%" y1="0%" x2="100%" y1="0%">
+      <stop offset="0%" style="stop-color:#ff3300;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0066ff;stop-opacity:1" />
+    </linearGradient>
     
-    <!-- Background -->
-    <rect width="800" height="450" fill="#f5f5f5" rx="10" ry="10" />
+    <linearGradient id="heatDistribution" x1="0%" y1="0%" x2="100%" y1="0%">
+      <stop offset="0%" style="stop-color:#ff3300;stop-opacity:1" />
+      <stop offset="20%" style="stop-color:#ff6600;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#ff9900;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#ffcc00;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#6699ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0066ff;stop-opacity:1" />
+    </linearGradient>
     
-    <!-- Title -->
-    <text x="400" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold" fill="#2c3e50">Thermal Impedance Concept</text>
+    <!-- Thermal equivalent circuit elements -->
+    <symbol id="thermalResistor" viewBox="0 0 60 20">
+      <rect x="0" y="0" width="60" height="20" fill="#dddddd" stroke="#333333" stroke-width="1" />
+      <text x="30" y="14" font-family="Arial" font-size="12" text-anchor="middle">R</text>
+    </symbol>
     
-    <!-- Left Side: Thermal Stimulus and Response -->
-    <rect x="100" y="80" width="250" height="300" rx="10" ry="10" fill="white" stroke="#bdc3c7" stroke-width="2" filter="url(#shadow)" />
+    <symbol id="thermalCapacitor" viewBox="0 0 30 40">
+      <line x1="10" y1="0" x2="10" y2="40" stroke="#333333" stroke-width="2" />
+      <line x1="20" y1="0" x2="20" y2="40" stroke="#333333" stroke-width="2" />
+      <text x="30" y="20" font-family="Arial" font-size="12" text-anchor="start">C</text>
+    </symbol>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="#f8f8f8" />
+  
+  <!-- Title -->
+  <text x="300" y="30" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold">Thermal Impedance Concept</text>
+  
+  <!-- Main Sections -->
+  <g>
+    <!-- Real World System -->
+    <rect x="50" y="70" width="200" height="130" fill="none" stroke="#333333" stroke-width="1" rx="5" ry="5" />
+    <text x="150" y="90" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Real System</text>
     
-    <!-- Thermal Stimulus (Input) -->
-    <text x="225" y="105" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold" fill="#2c3e50">Thermal Stimulus</text>
-    <path d="M 125,150 L 125,220 L 325,220 L 325,150 Z" fill="none" stroke="#3498db" stroke-width="2" />
-    <path d="M 125,150 L 125,220 L 225,220 L 225,150 Z" fill="url(#heatGradient)" opacity="0.3" />
+    <!-- Material with heat flow visualization -->
+    <rect x="70" y="110" width="160" height="70" fill="url(#heatDistribution)" stroke="#333333" stroke-width="1" />
+    <text x="100" y="140" font-family="Arial" font-size="14" fill="#ffffff" font-weight="bold">HOT</text>
+    <text x="200" y="140" font-family="Arial" font-size="14" fill="#ffffff" font-weight="bold">COLD</text>
     
-    <!-- Sine Wave for Oscillating Heat Input -->
-    <path d="M 125,185 
-             C 141,155 159,215 175,185 
-             C 191,155 209,215 225,185 
-             C 241,155 259,215 275,185 
-             C 291,155 309,215 325,185" 
-          fill="none" stroke="#e74c3c" stroke-width="2.5" />
+    <!-- Heat flow arrows -->
+    <path d="M60,140 L70,140" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)" />
+    <path d="M230,140 L240,140" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)" />
     
-    <text x="225" y="245" font-family="Arial" font-size="14" text-anchor="middle" fill="#7f8c8d">Periodic Heat Input</text>
+    <!-- Thermal Model -->
+    <rect x="350" y="70" width="200" height="130" fill="none" stroke="#333333" stroke-width="1" rx="5" ry="5" />
+    <text x="450" y="90" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Thermal Model</text>
     
-    <!-- Thermal Response (Output) -->
-    <text x="225" y="275" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold" fill="#2c3e50">Thermal Response</text>
-    <path d="M 125,300 L 125,370 L 325,370 L 325,300 Z" fill="none" stroke="#3498db" stroke-width="2" />
+    <!-- Thermal equivalent circuit -->
+    <line x1="370" y1="140" x2="530" y2="140" stroke="#333333" stroke-width="1.5" />
+    <use xlink:href="#thermalResistor" x="380" y="130" />
+    <use xlink:href="#thermalCapacitor" x="450" y="140" />
+    <circle cx="450" cy="140" r="3" fill="#333333" />
+    <line x1="450" y1="140" x2="450" y2="160" stroke="#333333" stroke-width="1.5" />
+    <line x1="370" y1="160" x2="530" y2="160" stroke="#333333" stroke-width="1.5" />
     
-    <!-- Sine Wave for Temperature Response (Phase Shifted) -->
-    <path d="M 125,335 
-             C 141,305 159,365 175,335 
-             C 191,305 209,365 225,335 
-             C 241,305 259,365 275,335 
-             C 291,305 309,365 325,335" 
-          fill="none" stroke="#9b59b6" stroke-width="2.5" transform="translate(25,0)" />
+    <!-- Connection between real and model -->
+    <path d="M250,140 C290,140 310,140 350,140" stroke="#333333" stroke-width="1.5" fill="none" stroke-dasharray="5,5" />
+    <text x="300" y="130" font-family="Arial" font-size="12" text-anchor="middle">corresponds to</text>
+  </g>
+  
+  <!-- Components Explanation -->
+  <g>
+    <rect x="50" y="230" width="500" height="150" fill="none" stroke="#333333" stroke-width="1" rx="5" ry="5" />
+    <text x="300" y="250" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Thermal Impedance Components</text>
     
-    <text x="225" y="395" font-family="Arial" font-size="14" text-anchor="middle" fill="#7f8c8d">Temperature Response (Phase Shifted)</text>
+    <!-- Thermal Resistance -->
+    <g transform="translate(80, 280)">
+      <use xlink:href="#thermalResistor" x="0" y="0" />
+      <text x="30" y="40" font-family="Arial" font-size="14" text-anchor="middle">Thermal Resistance (R)</text>
+      <text x="30" y="58" font-family="Arial" font-size="12" text-anchor="middle">Opposition to heat flow</text>
+      <text x="30" y="74" font-family="Arial" font-size="12" text-anchor="middle">Units: K/W</text>
+    </g>
     
-    <!-- Right Side: Thermal Impedance Concept -->
-    <rect x="450" y="80" width="250" height="300" rx="10" ry="10" fill="white" stroke="#bdc3c7" stroke-width="2" filter="url(#shadow)" />
+    <!-- Thermal Capacitance -->
+    <g transform="translate(240, 280)">
+      <use xlink:href="#thermalCapacitor" x="0" y="0" />
+      <text x="15" y="60" font-family="Arial" font-size="14" text-anchor="middle">Thermal Capacitance (C)</text>
+      <text x="15" y="78" font-family="Arial" font-size="12" text-anchor="middle">Heat storage capability</text>
+      <text x="15" y="94" font-family="Arial" font-size="12" text-anchor="middle">Units: J/K</text>
+    </g>
     
-    <text x="575" y="105" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold" fill="#2c3e50">Thermal Impedance Components</text>
+    <!-- Thermal Mass Effects -->
+    <g transform="translate(400, 280)">
+      <path d="M0,20 C15,0 45,40 60,20" stroke="#333333" stroke-width="2" fill="none" />
+      <text x="30" y="60" font-family="Arial" font-size="14" text-anchor="middle">Thermal Mass Effects</text>
+      <text x="30" y="78" font-family="Arial" font-size="12" text-anchor="middle">Dynamic thermal behavior</text>
+      <text x="30" y="94" font-family="Arial" font-size="12" text-anchor="middle">Analogous to inductance</text>
+    </g>
+  </g>
+  
+  <!-- Frequency Dependency Note -->
+  <g>
+    <line x1="50" y1="360" x2="300" y2="360" stroke="#333333" stroke-width="1" stroke-dasharray="2,2" />
+    <line x1="300" y1="360" x2="300" y2="380" stroke="#333333" stroke-width="1" stroke-dasharray="2,2" />
+    <line x1="300" y1="380" x2="550" y2="380" stroke="#333333" stroke-width="1" stroke-dasharray="2,2" />
     
-    <!-- Material Layers -->
-    <rect x="480" y="130" width="190" height="40" fill="#3498db" opacity="0.2" stroke="#2980b9" stroke-width="1" />
-    <rect x="480" y="170" width="190" height="30" fill="#e74c3c" opacity="0.2" stroke="#c0392b" stroke-width="1" />
-    <rect x="480" y="200" width="190" height="50" fill="#9b59b6" opacity="0.2" stroke="#8e44ad" stroke-width="1" />
-    <rect x="480" y="250" width="190" height="35" fill="#2ecc71" opacity="0.2" stroke="#27ae60" stroke-width="1" />
+    <rect x="50" y="360" width="40" height="20" fill="#ffdddd" stroke="#333333" stroke-width="1" rx="3" ry="3" />
+    <text x="70" y="374" font-family="Arial" font-size="10" text-anchor="middle">Low f</text>
     
-    <text x="575" y="155" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">Thermal Resistance (R)</text>
-    <text x="575" y="185" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">Thermal Interface (I)</text>
-    <text x="575" y="225" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">Thermal Capacitance (C)</text>
-    <text x="575" y="270" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">Heat Spreading (S)</text>
+    <rect x="510" y="380" width="40" height="20" fill="#ddddff" stroke="#333333" stroke-width="1" rx="3" ry="3" />
+    <text x="530" y="394" font-family="Arial" font-size="10" text-anchor="middle">High f</text>
     
-    <!-- Impedance Formula -->
-    <rect x="480" y="310" width="190" height="50" rx="5" ry="5" fill="#f1c40f" opacity="0.2" stroke="#f39c12" stroke-width="1" />
-    <text x="575" y="335" font-family="Arial" font-size="14" text-anchor="middle" font-style="italic" fill="#2c3e50">Z(ω) = R + j(ωL - 1/ωC)</text>
-    <text x="575" y="355" font-family="Arial" font-size="12" text-anchor="middle" fill="#7f8c8d">Thermal Impedance Formula</text>
-    
-    <!-- Connecting Arrow -->
-    <path d="M 360,230 L 440,230" stroke="#95a5a6" stroke-width="2" stroke-dasharray="5,5" />
-    <polygon points="440,230 430,225 430,235" fill="#95a5a6" />
-    
-    <!-- Footer Notes -->
-    <text x="400" y="425" font-family="Arial" font-size="14" text-anchor="middle" fill="#2c3e50">Frequency-dependent behavior of heat transfer through materials</text>
+    <text x="300" y="350" font-family="Arial" font-size="12" text-anchor="middle" font-style="italic">Frequency Dependent Behavior</text>
+  </g>
+  
+  <!-- Arrow definitions -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333333" />
+    </marker>
+  </defs>
 </svg>
